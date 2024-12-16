@@ -1,7 +1,7 @@
 ;
 import { useSwiper } from 'swiper/react';
 import { Button } from '../UI/Button';
-import { ArrowLeftIcon, ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/16/solid';
+import {  ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/16/solid';
 
 export default function SwiperNavigation() {
   const swiper = useSwiper();

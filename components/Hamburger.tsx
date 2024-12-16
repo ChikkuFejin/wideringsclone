@@ -11,7 +11,10 @@ export default function Hamburger({
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
-        onChangeToggle&&onChangeToggle(!isOpen);
+        if(onChangeToggle){
+            onChangeToggle(!isOpen);
+        }
+        
         setIsOpen(!isOpen);
     };
 

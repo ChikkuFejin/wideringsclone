@@ -1,4 +1,5 @@
-import { cn } from '@/Utils/lib';
+"use client";
+
 import { ReactNode } from 'react';
 
 interface ButtonProps {
@@ -8,7 +9,9 @@ interface ButtonProps {
 
 export function Button({ children,onClick }: ButtonProps) {
     function handleClick() {
-        onClick&&onClick();
+      if (onClick) {
+        onClick()
+      }
     }
     return <button
     onClick={handleClick}

@@ -1,4 +1,4 @@
-import {useState} from "react";
+
 import {cn} from "@/Utils/lib";
 import Link from "next/link";
 import { UpToTopAnimeChild, UpToTopAnimeContainer } from "./UI/UpToTopAnime";
@@ -20,7 +20,7 @@ export default function MobNav({
 console.log(closeLoaderClass)
 const overlayOpen= isOpen?"transform scale-y-1 transition-transform duration-700 ease-[cubic-bezier(.19,1,.22,1)] delay-50":"";
 const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :"";
-const linkClass = "transform translate-y-full transition-transform duration-1000" ;
+// const linkClass = "transform translate-y-full transition-transform duration-1000" ;
     return(
         <>
             <div

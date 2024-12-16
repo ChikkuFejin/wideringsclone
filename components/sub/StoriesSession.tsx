@@ -3,14 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import {  PlayCircleIcon, PlayIcon } from '@heroicons/react/16/solid';
 import SliderComp from './SliderComp';
 import ScrollToShow from './ScrollToShow';
 import SwiperNavigation from './SwiperNavigation';
 import StoryTittle from './StoryTittle';
 import BorderLine from '../UI/BorderLine';
 
-export default () => {
+export default function StoriesSession() {
   return (
     <div className='container mt-[60px]'>
     <StoryTittle title='Stories we tell'/>

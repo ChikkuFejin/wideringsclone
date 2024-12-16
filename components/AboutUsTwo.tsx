@@ -1,4 +1,4 @@
-import { useTransform, motion, useMotionValue, useScroll } from "framer-motion";
+import { useTransform, motion, useScroll } from "framer-motion";
 import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
 import { useRef } from "react";
