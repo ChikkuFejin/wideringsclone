@@ -10,6 +10,33 @@ import StoryTittle from './StoryTittle';
 import BorderLine from '../UI/BorderLine';
 
 export default function StoriesSession() {
+
+  const slides = [
+    {
+      videPath:'/assets/2Storieswetell.mp4',
+      title:'Stories we tell'
+    },
+    {
+      videPath:'/assets/3Creativeadvideo.mp4',
+      title:'Creative ad video'
+    },
+    {
+      videPath:'/assets/4Branding.mp4',
+      title:'Branding'
+    },
+    {
+      videPath:'/assets/5WebsiteDevelopment.mp4',
+      title:'Website Development'
+    },
+    {
+      videPath:'/assets/6Socialmediamarketing.mp4',
+      title:'Social media marketing'
+    },
+    {
+      videPath:'/assets/7Socialmediamanagement.mp4',
+      title:'Social media management'
+    }
+  ];
   return (
     <div className='container mt-[60px]'>
     <StoryTittle title='Stories we tell'/>
@@ -35,16 +62,16 @@ export default function StoriesSession() {
         },
       }}
     >
-      <SwiperSlide><ScrollToShow index={1}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={2}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={3}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={4}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={5}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={6}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={7}><SliderComp/></ScrollToShow></SwiperSlide>
-      <SwiperSlide><ScrollToShow index={8}><SliderComp/></ScrollToShow></SwiperSlide>
+      {
+        slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <ScrollToShow index={index}>
+              <SliderComp videoPath={slide.videPath} title={slide.title}/>
+            </ScrollToShow>
+          </SwiperSlide>
+        ))
+      }
   
-
       <SwiperNavigation/>
     </Swiper>
  

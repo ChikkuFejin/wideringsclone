@@ -1,6 +1,5 @@
 import { cn } from "@/Utils/lib";
 import React, { useEffect } from "react";
-import ReactPlayer from "react-player";
 import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
 import { useTransform, useViewportScroll,motion } from "framer-motion";
@@ -12,10 +11,14 @@ export default function HomeSection() {
     const scrollRef = React.useRef(0);
     const [sessionPlayer, setSessionPlayer] = React.useState(0);
     let videPercentage = 90 + (sessionPlayer/1000)*100;
-    if(videPercentage > 100){
+    if(sessionPlayer > 50){
         videPercentage = 100;
+    }else{
+      videPercentage = 90;
     }
 
+
+    
     useEffect(() => {
         const handleScroll = () => {
             if(scrollRef.current < window.scrollY){
@@ -34,27 +37,30 @@ export default function HomeSection() {
 
   return (
     <>
+
     <div className="mt-[100px] position-relative z-10">
-      <div className="text-[4.5rem] md:text-[8rem]  leading-[120%] font-auto container">
-        <span className="block"> We Prove </span>
-        <strong className="fm-reckless">How</strong>
+      <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
+        <span className="block"> We Reflect Your 
+        </span>
+        {/* <strong className="fm-reckless">How</strong> */}
         <div className="text-right">
-          <span> Outstanding </span>
-          <strong className="fm-reckless block">You Are</strong>
+          <span> Remarkable </span>
+          <strong className="fm-reckless block"> Potential</strong>
         </div>
       </div>
       <div>
+    
         <motion.div
-        className={cn('player-wrapper z-[-1] mt-[-116px] mx-auto',)}
+        className={cn(' z-[100] mt-[-116px] mx-auto transition-all ease-in-out duration-[0.7s] bg-black',)}
         style={{ y: y2,width:`${videPercentage}%`}}
       >
-    
-        <ReactPlayer
-          className='react-player'
-          url='https://vimeo.com/1031646239'
+
+        <video
+         
+          src='/assets/1BackgroundHeroPortionVideo.mp4'
           width='100%'
           height='100%'
-          playing
+          autoPlay
           muted
           loop	
           
@@ -68,11 +74,12 @@ export default function HomeSection() {
     <section className="mt-[80px] container">
         <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-9">
-            <AboutUs content="Wide Wings is an audiovisual communication agency surrounded by comprehensive storytellers with years of experience in creative and artistic activities, advertising, and film industry sectors."/>
+            <AboutUs content="SCILENS brings ideas to life with creativity and strategy. From crafting stunning visuals to building unforgettable brands, we specialize in shaping digital experiences that captivate and connect. Whether it’s eye-catching ad videos, seamless websites, or impactful social media campaigns, we create stories that leave a lasting impression.
+"/>
             </div>
             <div className="col-span-12 md:col-span-3 hidden md:block ">
                 <div className="relative h-full">
-                <img src="/assets/images/about-icon.png" alt="section1" className="w-[60%] absolute bottom-0" />
+                <img src="/assets/logo.png" alt="section1" className="w-[100%] absolute bottom-0" />
 
                 </div>
             </div>

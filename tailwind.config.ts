@@ -8,6 +8,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'line-fill': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        'line-fill': 'line-fill 2s ease-in-out forwards',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -37,3 +37,8 @@ export function slideInFromLeft(delay: number) {
       },
     },
   };
+
+  export const charVariant = {
+    hidden: { opacity: 0 },
+    reveal :{opacity: 1}
+  }

@@ -8,17 +8,19 @@ import StoriesSession from "@/components/sub/StoriesSession";
 import StoriesSectionTwo from "@/components/StoriesSectionTwo";
 import AboutUsTwo from "@/components/AboutUsTwo";
 import OurClients from "@/components/OurClients";
-
+import Fotter from "@/components/Fotter";
+import GrainEffect from "@/components/sub/GrainEffect";
 
 
 export default function Home() {
   return (
 
-      <>
+      <section className="content22" >
+        <GrainEffect/>
         <Preloader/>
 
           {/*<MobNav/>*/}
-          <div className="bg-white relative z-10">
+          <div className="bg-white relative mb-[100vh] ">
           <Header/>
           
           <HomeSection/>
@@ -27,7 +29,7 @@ export default function Home() {
           <AboutUsTwo/>
           <OurClients/>
           </div>
-          {/* <Fotter/> */}
-      </>
+          <Fotter/>
+      </section>
 );
 }
