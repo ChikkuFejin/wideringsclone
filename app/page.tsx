@@ -10,17 +10,19 @@ import AboutUsTwo from "@/components/AboutUsTwo";
 import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
 import GrainEffect from "@/components/sub/GrainEffect";
+import { useRef } from "react";
 
 
 export default function Home() {
+  const mainRef = useRef<HTMLDivElement>(null);
   return (
 
-      <section className="content22" >
+      <section className="main-section"  >
         <GrainEffect/>
         <Preloader/>
 
           {/*<MobNav/>*/}
-          <div className="bg-white relative mb-[100vh] ">
+          <div className="bg-white relative mb-[100vh] " ref={mainRef}>
           <Header/>
           
           <HomeSection/>

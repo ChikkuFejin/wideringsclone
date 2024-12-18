@@ -6,10 +6,10 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Fotter() {
-
+    gsap.registerPlugin(ScrollTrigger);
     const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,10 +30,10 @@ export default function Fotter() {
         }
       );
     }
-  }, []);
+  }, [footerRef]);
 
     return(
-        <section className="footer w-full z-[-100] bg-[#bc695f]  fixed left-0 bottom-0 transition-all duration-3 ease-out"  ref={footerRef}>
+        <section className="footer w-full z-[-100] bg-[#bc695f] translate-y-[100%]  fixed left-0 bottom-0 transition-all duration-3 ease-out"  ref={footerRef}>
             <div className="container  pb-[100px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">

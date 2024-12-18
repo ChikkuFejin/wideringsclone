@@ -17,7 +17,7 @@ console.log(scrollYProgress);
       <section className=" container mt-[200px] md:w-[90%] md:m-auto" >
         <div className="flex gap-3 ">
           <div className="col-span-12 md:col-span-6">
-            <img src="/assets/images/image1.jpg" alt="img1" className="w-full" />
+            <img src="/assets/images/Image1.jpg" alt="img1" className="w-full" />
           </div>
           <div className="hidden md:block col-span-6  ">
             <motion.div
@@ -25,7 +25,7 @@ console.log(scrollYProgress);
               style={{ y: y1 }}
             >
               <img
-                src="/assets/images/image2.jpg"
+                src="/assets/images/Image2.jpg"
                 alt="img1"
                 className="w-[80%] "
               />

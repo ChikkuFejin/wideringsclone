@@ -79,7 +79,7 @@ export default function HomeSection() {
             </div>
             <div className="col-span-12 md:col-span-3 hidden md:block ">
                 <div className="relative h-full">
-                <img src="/assets/logo.png" alt="section1" className="w-[100%] absolute bottom-0" />
+                <img src="/assets/Logo.png" alt="section1" className="w-[100%] absolute bottom-0" />
 
                 </div>
             </div>
