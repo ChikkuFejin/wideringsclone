@@ -1,4 +1,5 @@
 
+import ScrollToShow from "./sub/ScrollToShow";
 import StoriesLine from "./sub/StoriesLine";
 import StoryTittle from "./sub/StoryTittle";
 
@@ -42,7 +43,9 @@ export default function StoriesSectionTwo() {
             <StoryTittle title='Our Expertise'/>
             {
                 slides.map((slide, index) => (
+                  <ScrollToShow index={index} key={index}>
                     <StoriesLine key={index} title={slide.title} count={slide.count} videoPath={slide.videPath}/>
+                    </ScrollToShow>
                 ))
             }
             

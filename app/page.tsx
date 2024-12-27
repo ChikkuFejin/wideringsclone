@@ -32,6 +32,7 @@ export default function Home() {
           <AboutUsTwo/>
           <OurClients/>
           </div>
+          
           <Fotter/>
       
       </SmoothScroll>

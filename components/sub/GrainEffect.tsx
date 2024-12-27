@@ -19,7 +19,7 @@ export default function GrainEffect(){
           for (let i = 0; i < buffer.length; i += 4) {
             const gray = Math.random() * 255;
             buffer[i] = buffer[i + 1] = buffer[i + 2] = gray;
-            buffer[i + 3] = 20; // Adjust transparency
+            buffer[i + 3] = 10; // Adjust transparency
           }
 
           ctx.putImageData(imageData, 0, 0);
