@@ -51,7 +51,7 @@ export default function HomeSection() {
       <div>
     
         <motion.div
-        className={cn(' z-[100] mt-[-116px] mx-auto transition-all ease-in-out duration-[0.7s] bg-black',)}
+        className={cn(' z-[100] mt-[-116px] mx-auto transition-all ease-in-out duration-[1s] bg-black',)}
         style={{ y: y2,width:`${videPercentage}%`}}
       >
 

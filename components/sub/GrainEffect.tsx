@@ -19,7 +19,7 @@ export default function GrainEffect(){
           for (let i = 0; i < buffer.length; i += 4) {
             const gray = Math.random() * 255;
             buffer[i] = buffer[i + 1] = buffer[i + 2] = gray;
-            buffer[i + 3] = 30; // Adjust transparency
+            buffer[i + 3] = 20; // Adjust transparency
           }
 
           ctx.putImageData(imageData, 0, 0);
@@ -40,6 +40,7 @@ export default function GrainEffect(){
       ref={canvasRef}
       style={{
         position: "absolute",
+        zIndex:102,
         top: 0,
         left: 0,
         width: "100%",

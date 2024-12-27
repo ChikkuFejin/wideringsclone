@@ -11,20 +11,21 @@ import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
 import GrainEffect from "@/components/sub/GrainEffect";
 import { useRef } from "react";
+import SmoothScroll from "@/components/sub/SmoothScroll";
 
 
 export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
   return (
-
-      <section className="main-section"  >
-        <GrainEffect/>
-        <Preloader/>
-
+    <>
+     
+     <Preloader/>
+ 
+    <SmoothScroll>
+    <GrainEffect/>
           {/*<MobNav/>*/}
           <div className="bg-white relative mb-[100vh] " ref={mainRef}>
           <Header/>
-          
           <HomeSection/>
           <StoriesSession/>
           <StoriesSectionTwo/>
@@ -32,6 +33,9 @@ export default function Home() {
           <OurClients/>
           </div>
           <Fotter/>
-      </section>
+      
+      </SmoothScroll>
+      </>
+      
 );
 }
