@@ -10,7 +10,7 @@ import {
   const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({
     children,
   }) => {
-    const [isLoading, setIsLoading] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
   
     // Get height information of window and content
     const contentRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ import {
     useMotionValueEvent(smoothProgress, "change", (latest) => {
       console.log(latest);
       if (latest === 0) {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     });
   
