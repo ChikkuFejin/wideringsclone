@@ -2,38 +2,35 @@ import Link from "next/link";
 import SessionBorderLine from "./sub/SessionBorder";
 import StoryTittle from "./sub/StoryTittle";
 import { Button } from "./UI/Button";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import React, { useRef } from "react";
 
 
 export default function Fotter() {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
     const footerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const footer = footerRef.current;
+  // useEffect(() => {
+  //   const footer = footerRef.current;
 
-    if (footer) {
-      gsap.fromTo(
-        footer,
-        { y: "100%" }, // Start position (off-screen bottom)
-        {
-          y: "0%", // End position (fully visible)
-          scrollTrigger: {
-            trigger: footer,
-            start: "top bottom", // When the top of the footer reaches the bottom of the viewport
-            end: "bottom bottom", // When the bottom of the footer aligns with the bottom of the viewport
-            scrub: 1, // Smooth transition
-          },
-        }
-      );
-    }
-  }, [footerRef]);
+  //   if (footer) {
+  //     gsap.fromTo(
+  //       footer,
+  //       { y: "100%" }, // Start position (off-screen bottom)
+  //       {
+  //         y: "0%", // End position (fully visible)
+  //         scrollTrigger: {
+  //           trigger: footer,
+  //           start: "top bottom", // When the top of the footer reaches the bottom of the viewport
+  //           end: "bottom bottom", // When the bottom of the footer aligns with the bottom of the viewport
+  //           scrub: 1, // Smooth transition
+  //         },
+  //       }
+  //     );
+  //   }
+  // }, [footerRef]);
 
     return(
-        <section className="footer w-full z-[-100] bg-[#bc695f] translate-y-[100%]  fixed left-0 bottom-0 transition-all duration-3 ease-out"  ref={footerRef}>
+        <section className="footer w-full z-[-100] bg-[#bc695f]    left-0 bottom-0 transition-all duration-3 ease-out"  ref={footerRef}>
             <div className="container  pb-[100px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">

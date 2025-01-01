@@ -62,11 +62,36 @@
   }
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth{
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent]{
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped{
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe{
+  pointer-events: none;
+}
+
 .fm-reckless{
   font-family: 'Reckless', serif;
   font-weight: 300;
   font-style: italic;
 }
+
+.fm-gtw{
+  font-family: 'GT-Walsheim', serif;
+  font-style: normal !important;
+}
+
 .h1 {
   @apply text-4xl leading-[1.24];
 }

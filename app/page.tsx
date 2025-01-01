@@ -11,7 +11,7 @@ import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
 import GrainEffect from "@/components/sub/GrainEffect";
 import { useRef } from "react";
-import SmoothScroll from "@/components/sub/SmoothScroll";
+
 
 
 export default function Home() {
@@ -20,8 +20,6 @@ export default function Home() {
     <>
      
      <Preloader/>
- 
-    <SmoothScroll>
     <GrainEffect/>
           {/*<MobNav/>*/}
           <div className="bg-white relative mb-[100vh] " ref={mainRef}>
@@ -34,8 +32,7 @@ export default function Home() {
           </div>
           
           <Fotter/>
-      
-      </SmoothScroll>
+
       </>
       
 );

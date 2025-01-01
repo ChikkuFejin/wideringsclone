@@ -1,5 +1,5 @@
 import { cn } from "@/Utils/lib";
-import React, { useEffect } from "react";
+import React from "react";
 import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
 import { useTransform, useViewportScroll,motion } from "framer-motion";
@@ -8,8 +8,9 @@ export default function HomeSection() {
     const { scrollY } = useViewportScroll();
   // const y1 = useTransform(scrollY, [0, 300], [0, 200]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
-    const scrollRef = React.useRef(0);
-    const [sessionPlayer, setSessionPlayer] = React.useState(0);
+    // const scrollRef = React.useRef(0);
+    const sessionPlayer = 0;
+    // const [sessionPlayer, setSessionPlayer] = React.useState(0);
     let videPercentage = 90 + (sessionPlayer/1000)*100;
     if(sessionPlayer > 50){
         videPercentage = 100;
@@ -19,21 +20,21 @@ export default function HomeSection() {
 
 
     
-    useEffect(() => {
-        const handleScroll = () => {
-            if(scrollRef.current < window.scrollY){
-                setSessionPlayer(window.scrollY);
-            }else{
-                setSessionPlayer(window.scrollY);
-            }
-            scrollRef.current = window.scrollY;
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if(scrollRef.current < window.scrollY){
+    //             setSessionPlayer(window.scrollY);
+    //         }else{
+    //             setSessionPlayer(window.scrollY);
+    //         }
+    //         scrollRef.current = window.scrollY;
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
   return (
     <>

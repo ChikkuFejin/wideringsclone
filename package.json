@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@heroicons/react": "^2.2.0",
     "@types/vimeo__player": "^2.18.3",
     "clsx": "^2.1.1",
     "framer-motion": "^11.12.0",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.18",
     "motion": "^11.13.4",
     "next": "15.0.3",
     "react": "^18.3.1",
