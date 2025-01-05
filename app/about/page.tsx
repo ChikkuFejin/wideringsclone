@@ -54,7 +54,7 @@ export default function ContactPage(){
                 onUpdate:(self)=>{
                     gsap.to(scrollContainer,{
                         x:`${-550 * self.progress}vw`,
-                        duration:0.1,
+                        duration:0.3,
                         ease:"power3.inOut" 
                     })
                 }
