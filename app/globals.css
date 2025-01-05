@@ -86,6 +86,10 @@ html.lenis body {
   font-weight: 300;
   font-style: italic;
 }
+.fm-reckless-n{
+  font-family: 'Reckless', serif;
+  font-weight: 300;
+}
 
 .fm-gtw{
   font-family: 'GT-Walsheim', serif;
@@ -102,7 +106,7 @@ html.lenis body {
 }
 
 p {
-  @apply text-[0.9rem] leading-relaxed;
+  @apply text-[1rem] leading-relaxed;
 }
 body {
   color: var(--foreground);

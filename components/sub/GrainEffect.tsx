@@ -6,7 +6,7 @@ export default function GrainEffect(){
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (canvas) {
+    if (canvas && typeof window !== 'undefined') {
       const ctx = canvas.getContext("2d");
       if (ctx) {
         const width = canvas.width = window.innerWidth;

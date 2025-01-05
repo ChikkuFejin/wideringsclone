@@ -16,3 +16,19 @@ export function splitStringUsingRegex(inputString: string): string[] {
   
     return characters;
   }
+
+  export default function getPageCountFromBreakPoint  (swiper:any)  {
+    if (typeof window == 'undefined') return 0;
+    if (!swiper) return 0;
+  
+    const { slidesPerView } = swiper.params;
+    const totalSlides = swiper.slides.length;
+    const currentSlidesPerView =
+      typeof slidesPerView === 'number'
+        ? slidesPerView
+        : swiper.params.breakpoints
+        ? swiper.params.breakpoints[swiper.currentBreakpoint]?.slidesPerView || slidesPerView
+        : 1;
+  
+    return Math.ceil(totalSlides / currentSlidesPerView);
+  };
