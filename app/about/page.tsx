@@ -39,6 +39,7 @@ export default function ContactPage(){
     const hCard3  = useRef(null);
     const hCard4  = useRef(null);
 
+    
   
     useEffect(()=>{
 
@@ -48,14 +49,15 @@ export default function ContactPage(){
                 
                 trigger:scrollContainer,
                 start:"top top",
-                end:"+=900vh",
+                end:"+=8000vh",
                 scrub:1,
                 pin:true,
                 onUpdate:(self)=>{
                     gsap.to(scrollContainer,{
-                        x:`${-550 * self.progress}vw`,
-                        duration:0.3,
-                        ease:"power3.inOut" 
+                        x:`${-420 * self.progress}vw`,
+                        duration:0.5,
+                        ease:"none"
+                        // ease:"power3.inOut" 
                     })
                 }
             })
@@ -88,7 +90,7 @@ export default function ContactPage(){
                 ScrollTrigger.create({
                     trigger:card.id,
                     start:"top top",
-                    end:"+=1200vh",
+                    end:"+=8000vh",
                     scrub:1,
                     onUpdate:(self)=>{
                         gsap.to(card.id,{
