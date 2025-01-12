@@ -26,13 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
+      {/*<ReactLenis root>*/}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
-      </ReactLenis>
+      {/*</ReactLenis>*/}
     </html>
   );
 }

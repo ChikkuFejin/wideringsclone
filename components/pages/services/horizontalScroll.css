@@ -1,0 +1,35 @@
+
+.horizontal-scroll-container {
+    display: flex;
+    height: 100vh;
+    min-width: 400vw; /* Adjust for the number of sections */
+    position: relative;
+}
+
+.section {
+    min-width: 150vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    background: black;
+}
+
+.sticky-header {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 80%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*transform: translateY(-50%);*/
+    opacity: 0;
+    z-index: 10;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(-50%);
+}

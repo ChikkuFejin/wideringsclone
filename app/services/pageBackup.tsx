@@ -30,7 +30,6 @@ export default function ServicePage(){
 
 
     const imageConatiner = useTransform(scrollYProgress,[0,1],[0,-2550]);
-    const stickyTitleRef = useRef(null);
     
 
     const hCard1  = useRef(null);
@@ -61,88 +60,128 @@ export default function ServicePage(){
 
 
         const sections = gsap.utils.toArray(".hscrol-container section");
-        const stickyTitle = document.querySelector('.sticky-title');
-        gsap.to(sections, {
-            xPercent: -300, // Scroll through all 4 sections (300% shift for 4 sections)
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.hscrol-container',
-                pin: true,
-                scrub: 1,
-                markers: true,
-                end: () => `+=${sections.length * window.innerWidth}`, // End after scrolling through all sections
-            },
-        });
+        const mask = document.querySelector(".mask");
 
-        // gsap.timeline({
+        // Scroll animation for sections
+        // let scrollTween = gsap.to(sections, {
+        //     xPercent: -100 * (sections.length - 1),
+        //     ease: "none",
         //     scrollTrigger: {
-        //         trigger: ".section-sticky", // Start pinning when .section-sticky enters the viewport
-        //         start: "top top", // When the top of .section-sticky hits the top of the viewport
-        //         end: () => "+=" +( document.querySelector(".section-3").offsetHeight || 0), // Stop pinning after Section 3
-        //         pin: ".sticky-title", // Pin the sticky title
-        //         scrub: true, // Smooth pinning behaviors
-        //         markers: true, // Enable markers for debugging
-        //         onEnter: () => console.log("Pinned title activated"),
-        //         onLeave: () => console.log("Pinned title deactivated"),
+        //         trigger: ".hscrol-container",
+        //         pin: true,
+        //         scrub: 1,
+        //         end: "+=3000",
+        //         markers: true,
         //     },
         // });
 
-        // gsap.to(stickyTitleRef.current, {
-        //     rotation: 360, // Rotate 360 degrees
-        //     duration: 1, // Rotation duration
-        //     scrollTrigger: {
-        //         trigger: '.section-sticky',
-        //         start: 'top top',
-        //         end: '+=4000vh',
-        //         // pin : '.sticky-title',
-        //         scrub: true, // Smooth animation while scrolling
-        //         markers: true, // Enable markers to see ScrollTrigger boundaries
-        //         onEnter: () => console.log('Sticky section entered'),
-        //         onLeave: () => console.log('Sticky section left'),
-        //     },
-        // });
+        const scrollContainer = horizontalScrollContainerRef.current;
+        const scrollLineContainer = horizontalScrollLineContainerRef.current;
+        if(scrollContainer){
 
-        // ScrollTrigger.create({
-        //     trigger: '.section-sticky',
-        //     start: 'top top',
-        //     endTrigger: '.hscrolsection:nth-child(3)',
-        //     end: 'bottom top',
-        //     toggleClass: { targets: '.sticky-title', className: 'active' },
-        //     pin: '.sticky-title',
-        //     scrub: true,
-        //     onUpdate: (self) => {
-        //         console.log('Scroll progress:', self.progress); // Logs the scroll progress
-        //         console.log('Direction:', self.direction);     // Logs the scroll direction
-        //     },
-        //     onEnter: () => console.log('Entered Section 2'),
-        //     onLeave: () => console.log('Left Section 2'),
-        //     onEnterBack: () => console.log('Re-entered Section 2'),
-        //     onLeaveBack: () => console.log('Left Section 2 backward'),
-        // });
+            // const scrollTween = gsap.to(scrollContainer,{
+            //     xPercent:-100 *
+            // })
+            //
+            // gsap.to(scrollLineContainer, {
+            //     marker:true,
+            //     width: "100%",
+            //     pin:true,
+            //     start: "top top",
+            //     scrollTrigger: {
+            //         trigger: ".storysection",
+            //         start: "top left",
+            //         scrub: 1
+            //     }
+            // });
 
-        // ScrollTrigger.create({
-        //     trigger: '.section-sticky',
-        //     start: "top left", // When the second section reaches the top of the viewport
-        //     // endTrigger: '.hscrolsection:nth-child(3)', // End when the third section ends
-        //     end: '+=4000vh',
-        //     // toggleClass: { targets: stickyTitle, className: 'active' }, // Add a class for custom styles if needed
-        //     pin: '.sticky-title', // Pin the title
-        //     scrub: true,
-        //     markers: true,
-        // });
+            ScrollTrigger.create({
+                markers:true,
+                trigger:'.storysection',
+                start:"top top",
+                end:"+=2500vh",
+                scrub:1,
+                // pin:true,
+                onUpdate:(self)=>{
+                    setLineHeight(self.progress * 100);
 
-        // gsap.to(mask, {
-        //     width: "100%",
-        //     scrollTrigger: {
-        //         trigger: ".wrapper",
-        //         start: "top left",
-        //         scrub: 1
-        //     }
-        // });
+                    gsap.to(scrollLineContainer,{
 
+                        width:`${100 * self.progress}%`,
+                        // duration:0.5,
+                        // ease:"none"
 
+                        // ease:"power3.inOut"
+                    })
+                }
+            })
 
+            ScrollTrigger.create({
+                markers:true,
+                trigger:scrollContainer,
+                start:"top top",
+                end:"+=3000",
+                scrub:1,
+                pin:true,
+                onUpdate:(self)=>{
+                    gsap.to(scrollContainer,{
+                        x:`${-387 * self.progress}vw`,
+                        duration:0.5,
+                        ease:"none"
+                        // ease:"power3.inOut"
+                    })
 
+                    // gsap.to(scrollLineContainer,{
+                    //     width:`${100 * self.progress}%`,
+                    //     duration:0.5,
+                    //     ease:"none"
+                    //
+                    //     // ease:"power3.inOut"
+                    // })
+                }
+            })
+        //
+        //     const hCards=[
+        //         {
+        //             id:hCard1.current,
+        //             endTranslateX:-1000,
+        //             rotate:0
+        //         },
+        //         {
+        //             id:hCard2.current,
+        //             endTranslateX:-1000,
+        //             rotate:0
+        //         },
+        //         {
+        //             id:hCard3.current,
+        //             endTranslateX:-1000,
+        //             rotate:0
+        //         },
+        //         {
+        //             id:hCard4.current,
+        //             endTranslateX:-1000,
+        //             rotate:0
+        //         }
+        //     ]
+        //
+        //
+        //     hCards?.forEach(card=>{
+        //         ScrollTrigger.create({
+        //             trigger:card.id,
+        //             start:"top top",
+        //             end:"+=1200vh",
+        //             scrub:1,
+        //             onUpdate:(self)=>{
+        //                 gsap.to(card.id,{
+        //                     x:`${card.endTranslateX * self.progress}px`,
+        //                     duration:0.5,
+        //                     ease:"power3.out"
+        //                 })
+        //             }
+        //         })
+        //     })
+        //
+        }
     },[])
 
 
@@ -202,13 +241,16 @@ export default function ServicePage(){
 
 
             <section className="overflow-hidden bg-black relative">
-
+                <div className={`bg-gray-500 h-[1px] w-full fixed top-[50%]`}>
+                    <div className="bg-white h-[1px]  transition-all duration-500 ease-in-out"
+                         ref={horizontalScrollLineContainerRef}></div>
+                </div>
                 <div
-                    className="min-h-[100vh] w-[400vw] pb-[8vh] flex flex-nowrap items-center relative  box-border whitespace-normal hscrol-container bg-black"
+                    className="min-h-[100vh] pb-[8vh] flex items-center relative  box-border whitespace-normal hscrol-container bg-black"
                     ref={horizontalScrollContainerRef}
                 >
 
-                    <section className="relative w-[100vw] bg-black hscrolsection">
+                    <section className="relative w-[100vw] bg-black">
                         <div className="relative z-10 w-[100vw] h-[100vh] ">
                             <Image
                                 fill
@@ -224,36 +266,34 @@ export default function ServicePage(){
                             </p>
                         </div>
                     </section>
+                    <section className=" storysection relative">
 
-                            <section className="hscrolsection section-sticky relative bg-black flex flex-nowrap shrink-0 h-[100vh] ">
+                        <div className="flex">
+                            <section className=" relative ">
 
                                 <div className="px-[5%] flex justify-start items-center   ">
                                     <div className="w-full">
                                         <FontHeadM className="fm-reckless-n px-[10%] text-white ">The Truth</FontHeadM>
-                                        <div className={`bg-gray-500 h-[1px]  sticky-title sticky top-[20%] w-[100vw] bg-red-400 h-[100px] `} ref={stickyTitleRef}>
 
-                                            <div className="bg-white w-0 h-[1px]  transition-all duration-500 ease-in-out"
-                                                 ref={horizontalScrollLineContainerRef}></div>
-                                        </div>
                                         <div className="px-[10%] text-white">
-                                            <ul className='flex gap-[100px] '>
-                                                <li className="w-[600px]">
+                                            <div className='flex gap-[100px] '>
+                                                <div className="w-[600px]">
                                                     <strong className="py-[50px] block ">O1 NEED</strong>
                                                     <span className="fm-reckless-n text-[1.2rem]">
                                                 Finding out what our clients want or need to prove. What makes them
                                                 outstanding?
                                             </span>
-                                                </li>
-                                                <li className="w-[600px]">
+                                                </div>
+                                                <div className="w-[600px]">
                                                     <strong className="py-[50px] block ">02 Discovery</strong>
                                                     <span className="fm-reckless-n text-[1.2rem]">
                                                 Shadowing, interviewing, secret shopper, trying products – what do we do
                                                 to find
                                                 the real truth that makes those businesses outstand.
                                             </span>
-                                                </li>
+                                                </div>
 
-                                                <li className="w-[600px]">
+                                                <div className="w-[600px]">
                                                     <strong className="py-[50px] block ">03 Effect</strong>
                                                     <span className="fm-reckless-n text-[1.2rem]">
                                                 <ul>
@@ -265,19 +305,19 @@ export default function ServicePage(){
 
                                                 </ul>
                                             </span>
-                                                </li>
-                                            </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
 
                             </section>
-                    <section className=" relative hscrolsection bg-black flex flex-nowrap shrink-0 h-[100vh] section-3">
+                            <section className=" relative bg-black">
 
-                        <div className="px-[5%] flex justify-start items-center   ">
-                        <div className="w-full">
-                                    <FontHeadM className="fm-reckless-n px-[10%] text-white">The story</FontHeadM>
+                                <div className="px-[5%] flex justify-start items-center   ">
+                                    <div className="w-full">
+                                        <FontHeadM className="fm-reckless-n px-[10%] text-white">The story</FontHeadM>
 
 
                                         <div className="px-[10%] text-white">
@@ -317,9 +357,11 @@ Experience – light, sound, comfort.
 
 
                             </section>
+                        </div>
 
+                    </section>
 
-                    <section className="relative hscrolsection w-[100vw] bg-black">
+                    <section className="relative w-[100vw] bg-black">
                         <div className="relative z-10 w-[100vw] h-[100vh] ">
                             <Image
                                 fill
