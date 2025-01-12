@@ -33,8 +33,10 @@ const HorizontalScroll = () => {
                 markers:true,
                 onUpdate: (self) => {
                     const movingDev = document.querySelector('.moving-dev');
+                    const movingDevTwo = document.querySelector('.moving-dev-two');
                     const progress = self.progress * (sections.length - 1);
                     gsap.set(movingDev, { x: -progress * Number(movingDev?.offsetWidth || 0) });
+                    gsap.set(movingDevTwo, { x: -progress * Number(movingDevTwo?.offsetWidth || 0) });
                 }
             },
         });
@@ -91,20 +93,20 @@ const HorizontalScroll = () => {
                     <Image width='584' height={329}
                            src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg"
                            alt=""
-                            className="absolute right-[30%] z-[1]"
+                           className="absolute left-[10%] z-[-1] moving-dev-two"
 
                     />
-                    <div className="right-[30%] ">
-                        <ul className='flex justify-between items-end w-[100vw]'>
+                    {/*<div className="right-[30%] ">*/}
+                    {/*    <ul className='flex justify-between items-end w-[100vw]'>*/}
 
-                            <li >
-                                <div className="services-h-block-image object-fit">
-                                    <Image width='584' height={329}
-                                    src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
-                                    alt=""/></div>
-                            </li>
-                        </ul>
-                    </div>
+                    {/*        <li >*/}
+                    {/*            <div className="services-h-block-image object-fit">*/}
+                    {/*                <Image width='584' height={329}*/}
+                    {/*                src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"*/}
+                    {/*                alt=""/></div>*/}
+                    {/*        </li>*/}
+                    {/*    </ul>*/}
+                    {/*</div>*/}
                     <div>
                         <FontHeadM className="fm-reckless-n px-[10%] text-white ">The Truth</FontHeadM>
                         <ul className="flex mt-[50px]">
