@@ -28,7 +28,6 @@ const HorizontalScroll = () => {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
             scrollTrigger: {
-                markers:true,
                 trigger: container,
                 start: "top top",
                 end: () => `+=${container?.offsetWidth || 0}`,
