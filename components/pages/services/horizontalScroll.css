@@ -6,8 +6,8 @@
     position: relative;
 }
 
-.section {
-    min-width: 150vw;
+.services-h-line .section {
+    min-width: 270vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@
     background: black;
 }
 
-.sticky-header {
+.services-h-line .sticky-header {
     position: fixed;
     top: 40%;
     left: 50%;
@@ -32,4 +32,10 @@
     z-index: 10;
     transition: transform 0.3s, opacity 0.3s;
     transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+    .services-h-line .section {
+        min-width: 150vw;
+    }
 }

@@ -1,10 +1,17 @@
+"use client"
+
 import {useEffect, useRef, useState} from "react";
 import Hamburger from "@/components/Hamburger";
 import MobNav from "./MobNav";
 import { cn } from "@/Utils/lib";
 import Link from "next/link";
+import AngerLink from "@/components/UI/AngerLink";
 
-export default function Header() {
+export default function Header({
+    theme='light'
+                               }:{
+    theme?:'dark' | 'light'
+}) {
     const [closeLoaderClass, setCloseLoaderClass] = useState<boolean>(false);
     function handleClick(isActive:boolean){
         setCloseLoaderClass(isActive);
@@ -36,6 +43,10 @@ export default function Header() {
     }, []);
 
     const scrollClass = isScrolled ? 'transform -translate-y-full' : '';
+    const fontTheme = {
+        'dark':'text-white',
+        'light':'text-black'
+    }
 
     return (
         <>
@@ -45,15 +56,15 @@ export default function Header() {
                 <div className="flex justify-between items-center py-4 ">
                     <div className=" items-center hidden lg:flex" >
                         <ul className="flex space-x-4" id="menu-left-menu-1">
-                            <li className="menu-item"><Link href="portfolio/index.html"
-                                                         className="text-black">Portfolio</Link>
+                            <li className="menu-item"><AngerLink href="/portfolio"
+                                                         className={cn(fontTheme[theme])}>Portfolio</AngerLink>
                             </li>
-                            <li className="menu-item"><Link href="services/index.html" className="text-black">Services</Link>
+                            <li className="menu-item"><AngerLink href="/services"  className={cn(fontTheme[theme])}>Services</AngerLink>
                             </li>
                         </ul>
                     </div>
                     <div className="text-center">
-                        <Link href="/" className={cn(closeLoaderClass?'text-white':"text-black")}>
+                        <Link prefetch href="/" className={cn(closeLoaderClass? 'text-white':fontTheme[theme])}>
                             <svg fill="none" height="14" viewBox="0 0 202 14" width="202"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -88,13 +99,13 @@ export default function Header() {
                     </div>
                     <div className=" items-center hidden lg:flex">
                         <ul className="flex space-x-4" id="menu-right-menu-1">
-                            <li className="menu-item"><Link href="about/index.html" className="text-black">About</Link></li>
-                            <li className="menu-item"><Link href="contact/index.html" className="text-black">Contact</Link>
+                            <li className="menu-item"><AngerLink   href="/about" className={cn(fontTheme[theme])}>About</AngerLink></li>
+                            <li className="menu-item"><AngerLink  href="/contact" className={cn(fontTheme[theme])}>Contact</AngerLink>
                             </li>
                         </ul>
                         <div className="ml-4">
                             <div className="flex space-x-2">
-                                <Link href="lt/index.html" className="text-black">Lt</Link>
+                                <AngerLink href="#"  className={cn(fontTheme[theme])}>Lt</AngerLink>
                             </div>
                         </div>
                     </div>

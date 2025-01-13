@@ -2,8 +2,12 @@
 import ScrollToShow from "./sub/ScrollToShow";
 import StoriesLine from "./sub/StoriesLine";
 import StoryTittle from "./sub/StoryTittle";
+import {cn} from "@/Utils/lib";
 
-export default function StoriesSectionTwo() {
+export default function StoriesSectionTwo({
+    theme='light',
+                                              classConatiner
+                                          }:{theme?:'light'|'dark',classConatiner?:string}) {
     const slides = [
         // {
         //   videPath:'/assets/2Storieswetell.mp4',
@@ -37,14 +41,20 @@ export default function StoriesSectionTwo() {
         }
       ];
 
+    const classThemeConatiner = {
+        'light':"bg-wight",
+        'dark':"bg-black"
+    }
+
+    const titleContainer = theme ==='dark' ?'light':'dark'
     return(
         <>
-        <section className="container mt-[60px] pb-[200px]" >
-            <StoryTittle title='Our Expertise'/>
+        <section className={cn("container mt-[60px] pb-[200px]",classThemeConatiner[theme],classConatiner)} >
+            <StoryTittle title='Our Expertise' mode={titleContainer}/>
             {
                 slides.map((slide, index) => (
                   <ScrollToShow index={index} key={index}>
-                    <StoriesLine key={index} title={slide.title} count={slide.count} videoPath={slide.videPath}/>
+                    <StoriesLine key={index} title={slide.title} count={slide.count} videoPath={slide.videPath} theme={'dark'}/>
                     </ScrollToShow>
                 ))
             }

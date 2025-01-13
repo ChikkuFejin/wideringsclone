@@ -1,17 +1,23 @@
 import Link from "next/link";
 import { useId } from "react";
 import { Tooltip } from "react-tooltip";
+import {cn} from "@/Utils/lib";
 
 export default function StoriesLine({
-    title, count,videoPath
-}:{title:string, count:string,videoPath:string}) {
+    title, count,videoPath,theme ='light'
+}:{title:string, count:string,videoPath:string,theme:'dark'|'light'}) {
     const uniqueId = useId();
     const tooltipId:string = `tooltip-${uniqueId}`;
+
+    const fontTheme = {
+        'dark':'text-white',
+        'light':'text-black'
+    }
     return(
         <>
         <Link href="#" className="mb-1 block transition-all duration-[5s] ease-in" >
         <div className="inline" data-tooltip-id={tooltipId} data-tooltip-float={true}>
-            <span className="text-[10vw] md:text-[5vw] fm-reckless">{title}</span>
+            <span className={cn("text-[10vw] md:text-[5vw] fm-reckless",fontTheme[theme])}>{title}</span>
             <sup className="top-[-1.3rem] md:text-[2rem] ml-2 md:ml-3 md:top-[-2rem]">{count}</sup>
         </div>
         </Link>
