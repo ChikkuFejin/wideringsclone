@@ -4,7 +4,6 @@ import {useEffect, useRef, useState} from "react";
 import Hamburger from "@/components/Hamburger";
 import MobNav from "./MobNav";
 import { cn } from "@/Utils/lib";
-import Link from "next/link";
 import AngerLink from "@/components/UI/AngerLink";
 
 export default function Header({
@@ -64,7 +63,7 @@ export default function Header({
                         </ul>
                     </div>
                     <div className="text-center">
-                        <Link prefetch href="/" className={cn(closeLoaderClass? 'text-white':fontTheme[theme])}>
+                        <AngerLink  href="/" className={cn(closeLoaderClass? 'text-white':fontTheme[theme])}>
                             <svg fill="none" height="14" viewBox="0 0 202 14" width="202"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -95,7 +94,7 @@ export default function Header({
                                     d="M196.812 13.7519C195.206 13.7519 193.515 12.7229 192.35 11.9983L192.665 11.3053C194.208 11.8828 195.857 12.2188 196.865 12.2188C198.156 12.2188 199.238 11.6413 199.238 10.5073C199.238 7.50433 193.085 8.45983 193.085 4.03931C193.085 1.9918 195.027 0.154297 197.82 0.154297C199.532 0.154297 201.453 0.542799 201.453 0.542799L200.97 2.70581C199.416 2.25431 197.684 1.6978 197.18 1.6978C195.983 1.6978 195.447 2.42231 195.447 3.09431C195.447 5.92932 201.999 4.90032 201.999 9.60434C201.999 11.5573 200.319 13.7414 196.812 13.7414"
                                     fill="currentColor"/>
                             </svg>
-                        </Link>
+                        </AngerLink>
                     </div>
                     <div className=" items-center hidden lg:flex">
                         <ul className="flex space-x-4" id="menu-right-menu-1">

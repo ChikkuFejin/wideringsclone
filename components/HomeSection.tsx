@@ -1,45 +1,63 @@
 import { cn } from "@/Utils/lib";
-import React from "react";
+import React, {useEffect} from "react";
 import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
-import { useTransform, useViewportScroll,motion } from "framer-motion";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function HomeSection() {
-    const { scrollY } = useViewportScroll();
-  // const y1 = useTransform(scrollY, [0, 300], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
-    // const scrollRef = React.useRef(0);
-    const sessionPlayer = 0;
-    // const [sessionPlayer, setSessionPlayer] = React.useState(0);
-    let videPercentage = 90 + (sessionPlayer/1000)*100;
-    if(sessionPlayer > 50){
-        videPercentage = 100;
-    }else{
-      videPercentage = 90;
-    }
 
+    useEffect(() => {
+        const heroContainer   = document.querySelector('.hero-container');
+        const heroVideo =document.querySelector('.hero-video');
 
-    
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if(scrollRef.current < window.scrollY){
-    //             setSessionPlayer(window.scrollY);
-    //         }else{
-    //             setSessionPlayer(window.scrollY);
-    //         }
-    //         scrollRef.current = window.scrollY;
-    //     };
+        gsap.to(heroVideo,{
+            scale:1,
+            ease:'none',
+            scrollTrigger:{
+                trigger:heroContainer,
+                start:'top top',
+                end :"top bottom",
+                onEnter:()=>{
+                    gsap.to(heroVideo, {scale: 1, ease: 'none'})
+                },
+                onEnterBack:()=>{
+                    gsap.to(heroVideo, {scale: 0.9, ease: 'none'})
+                }
+            }
+        })
 
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+        gsap.to(heroVideo, {
+            y: '-40%', // Adjust this value for the intensity of the effect
+            ease: 'none',
+            scrollTrigger: {
+                trigger: heroContainer,
+                start: 'top bottom', // Start when the container enters the viewport
+                end: 'bottom top',  // End when the container exits the viewport
+                scrub: true,        // Smoothly scrubs the animation
+            }
+        });
+
+        // ScrollTrigger.create({
+        //     trigger:heroContainer,
+        //     start:"top 500px",
+        //     end:"bottom center",
+        //     markers:true,
+        //     onUpdate:(self)=>{
+        //         gsap.to(heroVideo,{
+        //             y:`-${self.progress *100} %`,
+        //             ease:"none"
+        //         })
+        //     }
+        // })
+
+    }, []);
 
   return (
     <>
 
-    <div className="mt-[100px] position-relative z-10">
+    <div className="mt-[100px] position-relative z-10 hero-container">
       <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
         <span className="block"> We Reflect Your 
         </span>
@@ -51,9 +69,9 @@ export default function HomeSection() {
       </div>
       <div>
     
-        <motion.div
-        className={cn(' z-[100] mt-[-116px] mx-auto transition-all ease-in-out duration-[1s] bg-black',)}
-        style={{ y: y2,width:`${videPercentage}%`}}
+        <div
+        className={cn(' z-[100]  mx-auto scale-[90%] bg-black hero-video',)}
+
       >
 
         <video
@@ -67,12 +85,12 @@ export default function HomeSection() {
           
         />
 
-      </motion.div>
+      </div>
       </div>
     </div>
 
 
-    <section className="mt-[80px] container">
+    <section className="  container">
         <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-9">
             <AboutUs content="SCILENS brings ideas to life with creativity and strategy. From crafting stunning visuals to building unforgettable brands, we specialize in shaping digital experiences that captivate and connect. Whether it’s eye-catching ad videos, seamless websites, or impactful social media campaigns, we create stories that leave a lasting impression.

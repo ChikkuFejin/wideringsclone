@@ -54,7 +54,7 @@ export default function StoriesSectionTwo({
             {
                 slides.map((slide, index) => (
                   <ScrollToShow index={index} key={index}>
-                    <StoriesLine key={index} title={slide.title} count={slide.count} videoPath={slide.videPath} theme={'dark'}/>
+                    <StoriesLine key={index} title={slide.title} count={slide.count} videoPath={slide.videPath} theme={theme}/>
                     </ScrollToShow>
                 ))
             }

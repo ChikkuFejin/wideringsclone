@@ -1,7 +1,7 @@
 
 import {cn} from "@/Utils/lib";
-import Link from "next/link";
 import { UpToTopAnimeChild, UpToTopAnimeContainer } from "./UI/UpToTopAnime";
+import AngerLink from "@/components/UI/AngerLink";
 
 export interface closeLoaderClass{
     overlay?: string;
@@ -41,23 +41,23 @@ const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :""
                     <ul>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                             <UpToTopAnimeChild isActive={isOpen}  className="block">
-                                    <Link href="/" >Portfolio</Link>
+                                    <AngerLink href="/" >Portfolio</AngerLink>
                             </UpToTopAnimeChild>
                             
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={200}>
-                            <Link href="/" >Services</Link>
+                            <AngerLink href="/" >Services</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={400}>
-                            <Link href="/" >About</Link>
+                            <AngerLink href="/" >About</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={600}>
-                            <Link href="/" >Contact</Link>
+                            <AngerLink href="/" >Contact</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                     </ul>

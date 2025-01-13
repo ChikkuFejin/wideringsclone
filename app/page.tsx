@@ -9,7 +9,7 @@ import StoriesSectionTwo from "@/components/StoriesSectionTwo";
 import AboutUsTwo from "@/components/AboutUsTwo";
 import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
-import GrainEffect from "@/components/sub/GrainEffect";
+// import GrainEffect from "@/components/sub/GrainEffect";
 import { useRef } from "react";
 
 
@@ -20,9 +20,9 @@ export default function Home() {
     <>
      
      <Preloader/>
-    <GrainEffect/>
+    {/*<GrainEffect/>*/}
           {/*<MobNav/>*/}
-          <div className="bg-white relative mb-[100vh] " ref={mainRef}>
+          <div className="bg-white relative " ref={mainRef}>
           <Header/>
           <HomeSection/>
           <StoriesSession/>
