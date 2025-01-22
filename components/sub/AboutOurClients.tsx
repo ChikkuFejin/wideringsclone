@@ -100,7 +100,6 @@ export default function AboutOurClients(){
 
 export  function SwiperNavigation() {
     const swiper = useSwiper();
-    console.log('swiper',swiper)
     const [totalSlides,setTotalSlides] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
 

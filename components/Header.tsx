@@ -50,7 +50,7 @@ export default function Header({
     return (
         <>
         <MobNav isOpen={closeLoaderClass}/>
-        <header className={cn(" px-4 fixed w-full top-0 left-0 z-[599] transition duration-[1.2s] ease-in-out",scrollClass)}>
+        <header className={cn(" px-4 py-[32px] fixed w-full top-0 left-0 z-[599] transition duration-[1.2s] ease-in-out",scrollClass)}>
             <div className="container">
                 <div className="flex justify-between items-center py-4 ">
                     <div className=" items-center hidden lg:flex" >
@@ -100,9 +100,10 @@ export default function Header({
                         <ul className="flex space-x-4" id="menu-right-menu-1">
                             <li className="menu-item"><AngerLink   href="/about" className={cn(fontTheme[theme])}>About</AngerLink></li>
                             <li className="menu-item"><AngerLink  href="/contact" className={cn(fontTheme[theme])}>Contact</AngerLink>
+
                             </li>
                         </ul>
-                        <div className="ml-4">
+                        <div className="ml-4 mt-[-7px]">
                             <div className="flex space-x-2">
                                 <AngerLink href="#"  className={cn(fontTheme[theme])}>Lt</AngerLink>
                             </div>

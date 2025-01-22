@@ -1,5 +1,6 @@
-import { Button } from "../UI/Button";
+
 import AnimationPara from "./AnimationPara";
+import AngerLink from "@/components/UI/AngerLink";
 
 export default function AboutUs({
     content
@@ -9,7 +10,7 @@ export default function AboutUs({
             <AnimationPara content={content}/>
             <div className="mt-[70px]"> 
 
-        <Button>About us</Button>
+        <AngerLink href='/about' className='btn'>About us</AngerLink>
        
         </div>
 

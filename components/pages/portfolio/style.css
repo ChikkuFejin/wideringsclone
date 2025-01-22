@@ -1,0 +1,17 @@
+.grid-item {
+    width: calc(25% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: #1d1d1d;
+    margin-bottom: 24px;
+}
+
+.grid-item:nth-child(10n+3), .grid-item:nth-child(10n+6) {
+    width: calc(50% - 24px);
+    background-color: #3f3f3f;
+}
+
+.grid-c{
+    margin-left: -12px;
+    width: calc(100% + 24px);
+}

@@ -41,23 +41,23 @@ const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :""
                     <ul>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                             <UpToTopAnimeChild isActive={isOpen}  className="block">
-                                    <AngerLink href="/" >Portfolio</AngerLink>
+                                    <AngerLink href="/portfolio" >Portfolio</AngerLink>
                             </UpToTopAnimeChild>
                             
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={200}>
-                            <AngerLink href="/" >Services</AngerLink>
+                            <AngerLink href="/services" >Services</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={400}>
-                            <AngerLink href="/" >About</AngerLink>
+                            <AngerLink href="/about" >About</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
                         <UpToTopAnimeChild isActive={isOpen} addDuration={600}>
-                            <AngerLink href="/" >Contact</AngerLink>
+                            <AngerLink href="/contact" >Contact</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                     </ul>

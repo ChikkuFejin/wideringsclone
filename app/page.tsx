@@ -9,31 +9,31 @@ import StoriesSectionTwo from "@/components/StoriesSectionTwo";
 import AboutUsTwo from "@/components/AboutUsTwo";
 import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
-// import GrainEffect from "@/components/sub/GrainEffect";
-import { useRef } from "react";
+
+
+
 
 
 
 export default function Home() {
-  const mainRef = useRef<HTMLDivElement>(null);
+
   return (
-    <>
+    <div className='grain'>
      
      <Preloader/>
-    {/*<GrainEffect/>*/}
-          {/*<MobNav/>*/}
-          <div className="bg-white relative " ref={mainRef}>
+
           <Header/>
+
           <HomeSection/>
           <StoriesSession/>
           <StoriesSectionTwo/>
           <AboutUsTwo/>
           <OurClients/>
-          </div>
-          
-          <Fotter/>
 
-      </>
+          
+          <Fotter className='bg-[#ab1301] '/>
+
+      </div>
       
 );
 }

@@ -1,11 +1,21 @@
+'use client';
+
 import Link from "next/link";
 import SessionBorderLine from "./sub/SessionBorder";
 import StoryTittle from "./sub/StoryTittle";
-import { Button } from "./UI/Button";
-import React, { useRef } from "react";
+import React, {useEffect, useRef} from "react";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {cn} from "@/Utils/lib";
+import AngerLink from "@/components/UI/AngerLink";
 
 
-export default function Fotter() {
+gsap.registerPlugin(ScrollTrigger);
+export default function Fotter({
+    className='bg-[#c76c61]'
+                               }:{
+    className?:string
+}) {
     // gsap.registerPlugin(ScrollTrigger);
     const footerRef = useRef<HTMLDivElement>(null);
 
@@ -29,23 +39,64 @@ export default function Fotter() {
   //   }
   // }, [footerRef]);
 
+
+    useEffect(() => {
+
+
+        // Set initial footer container position
+        gsap.set(".footer", { yPercent: -50 });
+
+        // Create timeline for uncover animation
+        const uncover = gsap.timeline({ paused: true });
+        uncover.to(".footer", { yPercent: 0, ease: "none" });
+
+        // Create ScrollTrigger for the animation
+        ScrollTrigger.create({
+            trigger: ".conclusion",
+            start: "bottom bottom",
+            end: "+=90%",
+            animation: uncover,
+            scrub: true,
+            // markers: true, // Debug markers for ScrollTrigger
+        });
+
+        // Refresh ScrollTrigger when component is mounted
+        ScrollTrigger.refresh();
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
+
+
+
     return(
-        <section className="footer w-full z-[-100] bg-[#bc695f]    left-0 bottom-0 transition-all duration-3 ease-out"  ref={footerRef}>
+        <>
+        <div className='conclusion'>
+
+        </div>
+        <div className='h-[130vh] w-[100vw] overflow-hidden'>
+
+
+        <section className={cn("footer w-full z-[-100] pt-[20px]  h-[130vh]  left-0 bottom-0 transition-all duration-3 ease-out",className)}  ref={footerRef}>
             <div className="container  pb-[100px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">
             <StoryTittle title='Lets Talk' mode="light"/>
 
-            <h2 className="text-[10vw] text-white md:text-[5vw] ">
+            <h2 className="text-[4.5rem] md:text-[7rem] text-white font-normal ">
                 <span>How</span> <span className="fm-reckless">outstanding</span>
             </h2>
-            <h2 className="text-[10vw] text-white md:text-[5vw]">
+            <h2 className="text-[4.5rem] md:text-[7rem] text-white ">
                 <span className="fm-reckless">are you?</span>
             </h2>
             </div>  
 
             <div className="my-[100px]">
-                <Button>Contact Us</Button>
+                <AngerLink href={'/contact'} className={'btn '}
+
+                           style={{'backgroundColor':'white','color':'red'}}
+                >Contact Us
+                </AngerLink>
             </div>
 
 
@@ -80,5 +131,8 @@ export default function Fotter() {
            
 
         </section>
-    )
+
+        </div>
+            </>
+            )
 }

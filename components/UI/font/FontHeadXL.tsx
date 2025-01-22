@@ -3,10 +3,16 @@ import React from "react";
 
 interface FontMProps {
     className?: string;
-    children : React.ReactNode
+    children : React.ReactNode,
+    theme?:'dark' | 'light'
 }
-export default function FontHeadXL({ className,children }: FontMProps) {
+export default function FontHeadXL({ className,children,theme = 'light'}: FontMProps) {
+
+    const fontTheme ={
+        'dark' :'text-white',
+        'light' :'text-black'
+    }
     return (
-        <span className={cn("text-[8rem] md:text-[10rem]", className)}>{children}</span>
+        <span className={cn("text-[8rem] md:text-[10rem]", className,fontTheme[theme])}>{children}</span>
     );
 }

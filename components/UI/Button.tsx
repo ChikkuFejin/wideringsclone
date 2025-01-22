@@ -1,23 +1,44 @@
 "use client";
 
-import { ReactNode } from 'react';
+import {ReactNode, useCallback} from 'react';
+import {cn} from "@/Utils/lib";
 
 interface ButtonProps {
     children: ReactNode;
     onClick?: () => void;
+    className?:string;
+    isAnimate?:boolean;
+    disabled?:boolean;
 }
 
-export function Button({ children,onClick }: ButtonProps) {
+export function Button({ children,onClick,className,isAnimate=false,disabled=false }: ButtonProps) {
     function handleClick() {
       if (onClick) {
         onClick()
       }
     }
+    const animationSpan =useCallback(()=>{
+            return (
+                <>
+                    <span className=' inline-block absolute group-hover:translate-y-[-100px] translate-y-[0]  transition duration-300 ease-in-out'>{children}</span>
+                    <span className=' inline-block  translate-y-[200%] group-hover:translate-y-[0] transition duration-300 ease-in-out'>{children}</span>
+                </>
+            )
+    },[])
+
+
     return <button
     onClick={handleClick}
     type="submit"
-    className="rounded-full bg-black px-3.5 py-2.5 text-center text-sm text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+    className={cn('btn',className||'',isAnimate&&' overflow-hidden group relative',disabled&&'disabled:bg-[#d9d9d9]')}
+    style={isAnimate && !disabled ?{paddingBottom:'4px'}:{}}
+    disabled={disabled}
   >
-    {children}
+
+        {
+            isAnimate && !disabled ?
+                animationSpan():
+                children
+        }
   </button>;
 }

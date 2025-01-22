@@ -32,3 +32,17 @@ export function splitStringUsingRegex(inputString: string): string[] {
   
     return Math.ceil(totalSlides / currentSlidesPerView);
   };
+
+export function groupArrayElements(array:any[], groupSize:number) {
+    const grouped = [];
+
+    if(Array.isArray(array)){
+        for (let i = 0; i < array.length; i += groupSize) {
+            grouped.push(array.slice(i, i + groupSize));
+        }
+    }
+
+    return grouped;
+
+
+}

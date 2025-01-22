@@ -39,29 +39,16 @@ export default function HomeSection() {
             }
         });
 
-        // ScrollTrigger.create({
-        //     trigger:heroContainer,
-        //     start:"top 500px",
-        //     end:"bottom center",
-        //     markers:true,
-        //     onUpdate:(self)=>{
-        //         gsap.to(heroVideo,{
-        //             y:`-${self.progress *100} %`,
-        //             ease:"none"
-        //         })
-        //     }
-        // })
-
     }, []);
 
   return (
     <>
 
-    <div className="mt-[100px] position-relative z-10 hero-container">
+    <div className="mt-[120px] relative z-10 hero-container">
       <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
-        <span className="block"> We Reflect Your 
+        <span className="block"> We Reflect
         </span>
-        {/* <strong className="fm-reckless">How</strong> */}
+         <strong className="fm-reckless">Your</strong>
         <div className="text-right">
           <span> Remarkable </span>
           <strong className="fm-reckless block"> Potential</strong>
@@ -90,7 +77,7 @@ export default function HomeSection() {
     </div>
 
 
-    <section className="  container">
+    <section className="  container ">
         <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-9">
             <AboutUs content="SCILENS brings ideas to life with creativity and strategy. From crafting stunning visuals to building unforgettable brands, we specialize in shaping digital experiences that captivate and connect. Whether it’s eye-catching ad videos, seamless websites, or impactful social media campaigns, we create stories that leave a lasting impression.
