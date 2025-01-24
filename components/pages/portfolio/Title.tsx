@@ -10,7 +10,7 @@ export  default function Title({
 
     return(
         <div>
-            <FontHeadXL theme={theme} className={'fm-reckless-n'}>{title}</FontHeadXL>
+            <FontHeadXL theme={theme} className={'fm-reckless-n '}>{title}</FontHeadXL>
             <SessionBorderLine className={'md:mt-0'} mode={'light'}/>
         </div>
     )

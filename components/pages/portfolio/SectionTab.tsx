@@ -110,23 +110,35 @@ export default function SectionTab({
     ]
 
     const [tabsData,setTabsData] =useState(tabsContents);
+    const [activeTab,setActiveTab] = useState('all');
+    const [animineClass,setAnimineClass] = useState('')
     const handleClickTab =(key:string)=>{
-        setTabsData(tabsContents?.map(i=>({...i,active: (key =='all' || i.key==key) ?true : false })))
+        setAnimineClass('scale-0 duration-[.7s] opacity-0')
+        setTimeout(() => {
+            setTabsData(tabsContents?.map(i=>({...i,active: (key =='all' || i.key==key) ?true : false })))
+            setActiveTab(key);
+            setAnimineClass('')
+        }, 500);
+        
     }
+
+   
     return(
         <div>
-            <StoryTittle title={tabs} mode={titleContainer} isMulti/>
+            <StoryTittle title={tabs} mode={titleContainer} isMulti textClassName="font-normal text-[13px] tracking-[2px]" activeTab={activeTab}/>
             <div>
 
                 {
                     groupArrayElements(tabsData.filter(i=>i.active),5).map((item,index)=>(
 
 
-                        <div className={'grid grid-cols-1 md:grid-cols-4 gap-4 mt-4'} key={index}>
+                        <div className={'grid grid-cols-1 md:grid-cols-4 gap-4 mt-4 '} key={index}>
                             {item.map((tab, idx) => (
 
                                 <div key={idx}
-                                     className={cn('relative overflow-hidden group transition-all duration-100 cursor-pointer', ((index+1)%2==0) && idx == 0 &&'md:col-span-2 md:row-span-2' || (index+1)%2!=0 && (idx+1)%3 == 0 && 'md:col-span-2 md:row-span-2')}>
+                                     className={cn('relative overflow-hidden group transition-all duration-100 cursor-pointer', ((index+1)%2==0) && idx == 0 &&'md:col-span-2 md:row-span-2' || (index+1)%2!=0 && (idx+1)%3 == 0 && 'md:col-span-2 md:row-span-2',
+                                        animineClass
+                                     )}>
                                     <video src={tab.videPath} loop muted onMouseEnter={(e) => e.currentTarget.play()}
                                            onMouseLeave={(e) => e?.currentTarget?.pause()}/>
                                     <div className='absolute bottom-[20px] left-[10px] flex items-center gap-4'>
@@ -165,3 +177,4 @@ export default function SectionTab({
         </div>
     )
 }
+

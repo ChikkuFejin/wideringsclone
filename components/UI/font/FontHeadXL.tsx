@@ -13,6 +13,6 @@ export default function FontHeadXL({ className,children,theme = 'light'}: FontMP
         'light' :'text-black'
     }
     return (
-        <span className={cn("text-[8rem] md:text-[10rem]", className,fontTheme[theme])}>{children}</span>
+        <span className={cn("text-[8rem] md:text-[10rem] font-[400]", className,fontTheme[theme])}>{children}</span>
     );
 }

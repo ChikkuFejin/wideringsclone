@@ -24,7 +24,7 @@ export default function Portfolio(){
             <section className={'mt-[100px] container'}>
                 <Title title={'Portfolio'} theme={'dark'}/>
             </section>
-            <section className={'mt-[50px] container'}>
+            <section className={'mt-[50px] container pb-[100px]'}>
                 <SectionTab theme={'dark'}/>
             </section>
 
