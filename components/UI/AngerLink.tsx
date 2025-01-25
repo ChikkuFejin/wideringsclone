@@ -7,7 +7,7 @@ const AngerLink = ({ href, children,className,style,...props }: { href: string;s
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
-        window.location.replace(href)
+        window.location.href = href
     };
 
     const replaceData = typeof children === 'string'?children:''

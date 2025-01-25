@@ -3,77 +3,16 @@ import {useState} from "react";
 import './style.css';
 import {PlayIcon} from "@heroicons/react/16/solid";
 import {cn, groupArrayElements} from "@/Utils/lib";
-const tabsContents=[
+import ScrollShowFade from "@/components/sub/ScrollShowFade";
+import { useGlobelContext } from "@/Context/GlobelContext";
+import { PortfolioItem } from "@/Utils/types";
 
-    {
-        videPath:'/assets/3Creativeadvideo.mp4',
-        title:'Creative ad video',
-        key: 'creativeandVideo',
-        active:true
-    },
-    {
-        videPath:'/assets/4Branding.mp4',
-        title:'Branding',
-        key: 'branding',
-        active:true
-    },
-    {
-        videPath:'/assets/5WebsiteDevelopment.mp4',
-        title:'Website Development',
-        key: 'websiteDevelopment',
-        active:true
-    },
-    {
-        videPath:'/assets/6Socialmediamarketing.mp4',
-        title:'Social media marketing',
-        key: 'socialMediaMarketing',
-        active:true
-    },
-    {
-        videPath:'/assets/7Socialmediamanagement.mp4',
-        title:'Social media management',
-        key: 'socialMediaManagement',
-        active:true
-    },
-    {
-        videPath:'/assets/3Creativeadvideo.mp4',
-        title:'Creative ad video',
-        key: 'creativeandVideo',
-        active:true
-    },
-    {
-        videPath:'/assets/4Branding.mp4',
-        title:'Branding',
-        key: 'branding',
-        active:true
-    },
-    {
-        videPath:'/assets/5WebsiteDevelopment.mp4',
-        title:'Website Development',
-        key: 'websiteDevelopment',
-        active:true
-    },
-    {
-        videPath:'/assets/6Socialmediamarketing.mp4',
-        title:'Social media marketing',
-        key: 'socialMediaMarketing',
-        active:true
-    },
-    {
-        videPath:'/assets/7Socialmediamanagement.mp4',
-        title:'Social media management',
-        key: 'socialMediaManagement',
-        active:true
-    }
-];
 
 export default function SectionTab({
     theme='light',
                                    }:{theme:'dark' | 'light'}){
 
     const titleContainer = theme ==='dark' ?'light':'dark';
-
-
 
     const tabs =[{
         label:'All',
@@ -109,33 +48,42 @@ export default function SectionTab({
 
     ]
 
-    const [tabsData,setTabsData] =useState(tabsContents);
+    
     const [activeTab,setActiveTab] = useState('all');
-    const [animineClass,setAnimineClass] = useState('')
+    const [animineClass,setAnimineClass] = useState('');
+    const {portfolio} =useGlobelContext();
+    const [tabsData,setTabsData] =useState(portfolio);
     const handleClickTab =(key:string)=>{
         setAnimineClass('scale-0 duration-[.7s] opacity-0')
         setTimeout(() => {
-            setTabsData(tabsContents?.map(i=>({...i,active: (key =='all' || i.key==key) ?true : false })))
+            setTabsData([...portfolio]?.map(i=>({...i,active: (key =='all' || i.key==key) ?true : false })))
             setActiveTab(key);
             setAnimineClass('')
         }, 500);
         
     }
 
-   
+    const handleNavigate=(item:PortfolioItem)=>{
+        window.location.href = `/portfolio/${item?.slug}`
+    }
+
     return(
         <div>
+            <ScrollShowFade  addDuration={1}>
             <StoryTittle title={tabs} mode={titleContainer} isMulti textClassName="font-normal text-[13px] tracking-[2px]" activeTab={activeTab}/>
+            </ScrollShowFade>
+            <ScrollShowFade  addDuration={1.5}>
             <div>
 
                 {
                     groupArrayElements(tabsData.filter(i=>i.active),5).map((item,index)=>(
 
 
-                        <div className={'grid grid-cols-1 md:grid-cols-4 gap-4 mt-4 '} key={index}>
+                        <div className={'grid grid-cols-1 md:grid-cols-4 gap-4 mt-4 '} key={index} >
                             {item.map((tab, idx) => (
 
                                 <div key={idx}
+                                onClick={()=>handleNavigate(tab)}
                                      className={cn('relative overflow-hidden group transition-all duration-100 cursor-pointer', ((index+1)%2==0) && idx == 0 &&'md:col-span-2 md:row-span-2' || (index+1)%2!=0 && (idx+1)%3 == 0 && 'md:col-span-2 md:row-span-2',
                                         animineClass
                                      )}>
@@ -174,6 +122,7 @@ export default function SectionTab({
                 {/*}*/}
 
             </div>
+            </ScrollShowFade>
         </div>
     )
 }

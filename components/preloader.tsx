@@ -3,16 +3,26 @@
 import Image from "next/image";
 import {useEffect, useState} from "react";
 
-export default function Preloader(){
+interface PreloaderProps{
+    onChange?:(status:boolean)=>void
+}
+export default function Preloader({
+    onChange
+}:PreloaderProps){
     const [closeLoaderClass, setCloseLoaderClass] = useState<string | undefined>();
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setCloseLoaderClass(" transform translate-y-[-100%]");
+            if(onChange){
+                onChange(false)
+            }
         }, 2000);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [onChange]);
+
     return (
 
         <div

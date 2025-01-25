@@ -4,6 +4,7 @@ import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import ScrollShowFade from "./sub/ScrollShowFade";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function HomeSection() {
@@ -43,8 +44,9 @@ export default function HomeSection() {
 
   return (
     <>
-
+<ScrollShowFade>
     <div className="mt-[120px] relative z-10 hero-container">
+       
       <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
         <span className="block"> We Reflect
         </span>
@@ -54,8 +56,9 @@ export default function HomeSection() {
           <strong className="fm-reckless block"> Potential</strong>
         </div>
       </div>
+
       <div>
-    
+
         <div
         className={cn(' z-[100]  mx-auto scale-[90%] bg-black hero-video',)}
 
@@ -73,6 +76,7 @@ export default function HomeSection() {
         />
 
       </div>
+     
       </div>
     </div>
 
@@ -97,7 +101,7 @@ export default function HomeSection() {
         
     </section>
    
-
+    </ScrollShowFade>
     </>
   );
 }

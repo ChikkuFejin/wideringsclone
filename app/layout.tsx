@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "./grain.css";
 import ReactLenis from "lenis/react";
+import { GlobelContextProvider } from "@/Context/GlobelContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <main >
+        <GlobelContextProvider>
           {children}
+          </GlobelContextProvider>
       </main>
 
       </body>

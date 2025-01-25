@@ -19,38 +19,13 @@ export default function Fotter({
     // gsap.registerPlugin(ScrollTrigger);
     const footerRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const footer = footerRef.current;
-
-  //   if (footer) {
-  //     gsap.fromTo(
-  //       footer,
-  //       { y: "100%" }, // Start position (off-screen bottom)
-  //       {
-  //         y: "0%", // End position (fully visible)
-  //         scrollTrigger: {
-  //           trigger: footer,
-  //           start: "top bottom", // When the top of the footer reaches the bottom of the viewport
-  //           end: "bottom bottom", // When the bottom of the footer aligns with the bottom of the viewport
-  //           scrub: 1, // Smooth transition
-  //         },
-  //       }
-  //     );
-  //   }
-  // }, [footerRef]);
-
 
     useEffect(() => {
 
-
-        // Set initial footer container position
         gsap.set(".footer", { yPercent: -50 });
-
-        // Create timeline for uncover animation
         const uncover = gsap.timeline({ paused: true });
         uncover.to(".footer", { yPercent: 0, ease: "none" });
 
-        // Create ScrollTrigger for the animation
         ScrollTrigger.create({
             trigger: ".conclusion",
             start: "bottom bottom",

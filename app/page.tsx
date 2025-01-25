@@ -9,6 +9,7 @@ import StoriesSectionTwo from "@/components/StoriesSectionTwo";
 import AboutUsTwo from "@/components/AboutUsTwo";
 import OurClients from "@/components/OurClients";
 import Fotter from "@/components/Fotter";
+import { useState } from "react";
 
 
 
@@ -16,15 +17,23 @@ import Fotter from "@/components/Fotter";
 
 
 export default function Home() {
-
+  const [isLoading,setIsLoading] =useState(true);
+  const handleLoderUpdate=(status:boolean)=>{
+    setIsLoading(status);
+  }
   return (
     <div className='grain'>
      
-     <Preloader/>
-
-          <Header/>
-
+     <Preloader onChange={handleLoderUpdate}/>
+               <Header/>
+      {
+        !isLoading&&(
           <HomeSection/>
+        )
+      }
+
+
+          
           <StoriesSession/>
           <StoriesSectionTwo/>
           <AboutUsTwo/>
