@@ -31,9 +31,6 @@ export default function Home() {
           <HomeSection/>
         )
       }
-
-
-          
           <StoriesSession/>
           <StoriesSectionTwo/>
           <AboutUsTwo/>

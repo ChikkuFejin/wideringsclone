@@ -1,9 +1,10 @@
 
-import ScrollToShow from "./sub/ScrollToShow";
+
 import StoriesLine from "./sub/StoriesLine";
 import StoryTittle from "./sub/StoryTittle";
 import {cn} from "@/Utils/lib";
 import {useState} from "react";
+import ScrollShowFade from "@/components/sub/ScrollShowFade";
 
 export default function StoriesSectionTwo({
     theme='light',
@@ -73,12 +74,12 @@ export default function StoriesSectionTwo({
         <section className={cn("container static mt-[60px] pb-[200px]  ",classThemeConatiner[theme],classConatiner)}  onMouseMove={handleMouseMove}>
             <StoryTittle title='Our Expertise' mode={titleContainer}/>
             {
-                slides.map((slide, index) => (
+                slides.map((slide, index:number) => (
                     <div key={index}  >
 
-                  <ScrollToShow index={index} key={index}>
+                  <ScrollShowFade addDuration={index} key={index}>
                     <StoriesLine key={index} title={slide.title} handleMouseHover={handleMouseHover} count={slide.count} videoPath={slide.videPath} theme={theme}/>
-                    </ScrollToShow>
+                    </ScrollShowFade>
 
                     </div>
                 ))

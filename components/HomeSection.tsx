@@ -4,7 +4,7 @@ import AboutUs from "./sub/AboutUs";
 import SessionBorderLine from "./sub/SessionBorder";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import ScrollShowFade from "./sub/ScrollShowFade";
+import AnimeUpToTop from "@/components/UI/animie/AnimeUpToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function HomeSection() {
@@ -30,7 +30,7 @@ export default function HomeSection() {
         })
 
         gsap.to(heroVideo, {
-            y: '-40%', // Adjust this value for the intensity of the effect
+            y: '-35%', // Adjust this value for the intensity of the effect
             ease: 'none',
             scrollTrigger: {
                 trigger: heroContainer,
@@ -44,25 +44,31 @@ export default function HomeSection() {
 
   return (
     <>
-<ScrollShowFade>
+{/*<ScrollShowFade>*/}
     <div className="mt-[120px] relative z-10 hero-container">
        
       <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
-        <span className="block"> We Reflect
-        </span>
-         <strong className="fm-reckless">Your</strong>
+          <AnimeUpToTop>We Reflect</AnimeUpToTop>
+          <AnimeUpToTop addDuration={100}>
+              <strong className="fm-reckless">Your</strong>
+          </AnimeUpToTop>
+
         <div className="text-right">
-          <span> Remarkable </span>
-          <strong className="fm-reckless block"> Potential</strong>
+            <AnimeUpToTop addDuration={200}>Remarkable</AnimeUpToTop>
+            <AnimeUpToTop addDuration={300}>
+                <strong className="fm-reckless block"> Potential</strong>
+            </AnimeUpToTop>
+
         </div>
       </div>
 
       <div>
 
         <div
-        className={cn(' z-[100]  mx-auto scale-[90%] bg-black hero-video',)}
+        className={cn(' z-[100]  mx-auto scale-[90%] hero-video',)}
 
       >
+            <AnimeUpToTop addDuration={400}>
 
         <video
          
@@ -74,14 +80,17 @@ export default function HomeSection() {
           loop	
           
         />
+        </AnimeUpToTop>
 
       </div>
+
      
       </div>
+
     </div>
 
 
-    <section className="  container ">
+    <section className="  container relative mt-[-10%]">
         <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-9">
             <AboutUs content="SCILENS brings ideas to life with creativity and strategy. From crafting stunning visuals to building unforgettable brands, we specialize in shaping digital experiences that captivate and connect. Whether it’s eye-catching ad videos, seamless websites, or impactful social media campaigns, we create stories that leave a lasting impression.
@@ -101,7 +110,7 @@ export default function HomeSection() {
         
     </section>
    
-    </ScrollShowFade>
+    {/*</ScrollShowFade>*/}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import AngerLink from "@/components/UI/AngerLink";
 
-;
+
 import { useSwiper } from 'swiper/react';
 import { Button } from '../UI/Button';
 import {  ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/16/solid';

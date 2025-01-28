@@ -16,8 +16,8 @@ const ScrollToShow = ({children, index=0 }: Props) => {
   });
 
   const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    hidden: { disable: 'none' },
+    visible: { display: 'block' },
   };
 
   const animationDelay = 0.2;

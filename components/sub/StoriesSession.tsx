@@ -8,6 +8,7 @@ import ScrollToShow from './ScrollToShow';
 import SwiperNavigation from './SwiperNavigation';
 import StoryTittle from './StoryTittle';
 import BorderLine from '../UI/BorderLine';
+import ScrollShowFade from "@/components/sub/ScrollShowFade";
 
 export default function StoriesSession() {
 
@@ -65,9 +66,9 @@ export default function StoriesSession() {
       {
         slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <ScrollToShow index={index}>
+            <ScrollShowFade addDuration={index+2}>
               <SliderComp videoPath={slide.videPath} title={slide.title}/>
-            </ScrollToShow>
+            </ScrollShowFade>
           </SwiperSlide>
         ))
       }

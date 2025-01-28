@@ -1,0 +1,18 @@
+.anime-uptotop{
+    transition: transform 1s;
+}
+
+.anime-uptotop>span{
+    display: inline-block;
+    transition: transform 1s cubic-bezier(.65,0,.35,1);
+    overflow:hidden;
+}
+
+.anime-uptotop.move-up>span span{
+    transform: translateY(0%);
+}
+.anime-uptotop>span span{
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform .6s cubic-bezier(.65,0,.35,1);
+}
