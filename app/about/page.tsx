@@ -170,15 +170,15 @@ export default function ContactPage(){
             <MotionContainer style={{ y: rightConatiner }} isAnimation={!isMobile} >
               <div className="max-w-[400px] mb-[100px] mt-[100px] md:mt-[100px] ">
                 <ParaReckless className="mb-[50px] ">
-                  Wide Wings is an audiovisual communication agency surrounded
-                  by comprehensive storytellers with years of experience in
-                  creative and artistic activities, advertising, and film
-                  industry sectors.
+                    SciLens is an audiovisual communication agency surrounded by comprehensive storytellers
+                    with years of experience in creative and artistic activities, advertising, and film industry
+                    sectors.
                 </ParaReckless>
-                <ParaReckless className="mb-[50px] ">
-                  We create not just beautiful visuals – but stories about
-                  companies that are both true and meaningful for their clients.
-                </ParaReckless>
+                  <div className="py-[50px]"></div>
+                {/*<ParaReckless className="mb-[50px] ">*/}
+                {/*  We create not just beautiful visuals – but stories about*/}
+                {/*  companies that are both true and meaningful for their clients.*/}
+                {/*</ParaReckless>*/}
               </div>
             </MotionContainer>
           </div>

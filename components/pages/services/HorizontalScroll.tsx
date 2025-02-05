@@ -127,10 +127,10 @@ const HorizontalScroll = () => {
                     </div>
 
 
-                    <div className=" absolute left-[67%] z-20 " ref={movingDevRef}>
+                    <div className=" absolute left-[67%] z-20 text-white" ref={movingDevRef}>
                         <p className="text-white flex flex-col flex-wrap h-[100vh] justify-center items-start   ">
-                            <FontHeadXL>Our</FontHeadXL>
-                            <FontHeadXL className="fm-reckless-n mt-[-7rem] pl-[10rem] "> process</FontHeadXL>
+                            <FontHeadXL theme='dark'>Our</FontHeadXL>
+                            <FontHeadXL theme='dark' className="fm-reckless-n mt-[-7rem] pl-[10rem] "> process</FontHeadXL>
                         </p>
                     </div>
                 </div>

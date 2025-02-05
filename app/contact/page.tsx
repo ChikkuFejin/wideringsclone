@@ -32,7 +32,7 @@ export default function ContactPage(){
         </ParallaxText>
         </div>
         
-        <section className="container mt-[200px] md:mt-[100px]">
+        <section className="container mt-[200px] md:mt-[100px] pb-[100px]">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 <motion.div className="md:hidden w-[60%] ml-auto relative z-10 flex-col" style={{y:formContainer}}>
                 <Image src="https://widewings.eu/wp-content/uploads/2022/11/Screen-Shot-2022-10-12-at-18.33-1.jpg" width="439" height={516}  alt="image" />
@@ -49,8 +49,8 @@ export default function ContactPage(){
                       
                         <Image src="https://widewings.eu/wp-content/uploads/2022/11/Screen-Shot-2022-10-12-at-18.33-1.jpg" width="439" height={516}  alt="image" className="hidden md:inline"/>
                         <div className="mt-[200px] mb-[100px]">
-                            <p className="font-bold">hello@widewings.eu</p>
-                            <p className="font-bold">+370 652 22295</p>
+                            <p className="font-bold">hello@Scilens.com</p>
+                            <p className="font-bold">+971 58 819 9586</p>
                         </div>
 
                         <form>
