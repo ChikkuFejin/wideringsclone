@@ -117,7 +117,7 @@ const HorizontalScroll = () => {
             <div ref={containerRef} className="horizontal-scroll-container">
                 <div className="section relative ">
 
-                    <div className="absolute z-10 left-0 w-[100vw] h-[100vh] scale-[90%] start-image">
+                    <div className="absolute z-10 left-0 w-[100vw] h-[100vh] scale-[90%] start-image"> 
                         <Image
                             fill
                             alt={""}

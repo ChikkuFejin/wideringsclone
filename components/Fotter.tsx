@@ -53,7 +53,7 @@ export default function Fotter({
         <div className='min-h-[100dvh]  lg:h-[135vh] w-[100vw] overflow-hidden relative z-20 bg-black'>
 
 
-        <section className={cn("footer w-full z-[-100] pt-[20px]  h-[130vh]  left-0 bottom-0 transition-all duration-3 ease-out bg-black",className)}  ref={footerRef}>
+        <section className={cn("footer w-full z-[-100] pt-[20px]  min-h-[100dvh]  left-0 bottom-0 transition-all duration-3 ease-out bg-black",className)}  ref={footerRef}>
             <div className="container  pb-[100px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">
@@ -77,8 +77,8 @@ export default function Fotter({
 
 
             <div className="text-white mb-4">
-                <div className="grid grid-cols-2">
-                    <div className="grid grid-cols-3 gap-3">
+                <div className="grid md:grid-cols-2">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {/* <ul>
                     <li className="mb-2" ><Link href="#" >Instagram</Link></li>
                     <li className="mb-2" >  <Link href="#"  >Linkedin</Link></li>

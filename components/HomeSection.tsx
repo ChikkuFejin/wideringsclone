@@ -49,7 +49,7 @@ export default function HomeSection({
 {/*<ScrollShowFade>*/}
     <div className="mt-[120px] relative z-10 hero-container">
        
-      <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
+      <div className="text-[3.8rem] md:text-[8rem]  z-[101] relative  leading-[120%] font-auto container">
           <AnimeUpToTop start={!isLoading}>We Reflect</AnimeUpToTop>
           <AnimeUpToTop start={!isLoading} addDuration={100}>
               <strong className="fm-reckless">Your</strong>

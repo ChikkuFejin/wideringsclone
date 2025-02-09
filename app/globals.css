@@ -118,7 +118,7 @@ p {
   @apply text-[1rem] leading-relaxed;
 }
 body {
-  color: var(--foreground);
+  color: var(--color--black);
   background: var(--background);
   font-family: 'GT-Walsheim', sans-serif;
   line-height: 1.5;
