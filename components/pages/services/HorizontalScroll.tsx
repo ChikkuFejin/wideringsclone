@@ -20,17 +20,22 @@ const HorizontalScroll = () => {
         const container = containerRef.current;
         const header = headerRef.current;
         const sections = gsap.utils.toArray<HTMLElement>(".section");
+        console.log("sections",sections);
         const startImage = document.querySelector('.start-image');
         const endImage = document.querySelector('.end-image');
+
+          const viewportWidth = window.innerWidth; // Get dynamic viewport width
+
 
         // Horizontal Scroll
         gsap.to(sections, {
             xPercent: -100 * (sections.length - 1),
+            duration:0.9,
             ease: "none",
             scrollTrigger: {
                 trigger: container,
                 start: "top top",
-                end: () => `+=${container?.offsetWidth || 0}`,
+                end: () => `+=50000`,
                 scrub: true,
                 pin: true,
                 anticipatePin: 1,
@@ -46,7 +51,7 @@ const HorizontalScroll = () => {
                     const imgSections = gsap.utils.toArray<HTMLElement>(".moving-dev-img");
                     // debugger
                     imgSections.forEach((element,index)=>{
-                        gsap.set(element, { x: -progress * (index +200) });
+                        gsap.set(element, { x: -progress * (index +50) });
                     })
 
 
@@ -77,13 +82,13 @@ const HorizontalScroll = () => {
 
         const triggerElement = sectionTwo.current;
         const triggerWidth = triggerElement?.offsetWidth || 0;
-        const viewportWidth = window.innerWidth;
+    
 
         ScrollTrigger.create({
             // markers:true,
             trigger: sectionTwo.current, // Second section
-            start: `+=${(triggerWidth / 3) + 10}px`, // Adjust as needed
-            end: `+=${viewportWidth * 3}px`, // Adjust as needed
+            start: `+=${(triggerWidth / 2) + 5000}px`, // Adjust as needed
+            end: `+=${40000 - (viewportWidth * 3)}px`, // Adjust as needed
             onUpdate:(self)=>{
                 console.log("offsetWidth",self.progress * 100);
                 gsap.set('.sticky-header',{
