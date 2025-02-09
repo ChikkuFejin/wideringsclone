@@ -16,10 +16,10 @@ const VideoDetails:React.FC<VideoDetailsProps>=({
                 <span className="opacity-[0.4]">Client</span>
                 <p className="text-white">{details?.client}</p>
             </li>
-            <li className="text-white mb-4">
+            {/* <li className="text-white mb-4">
                 <span className="opacity-[0.4]">Director</span>
                 <p className="text-white">{details?.director}</p>
-            </li>
+            </li> */}
 
         </ul>
     </>

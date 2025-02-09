@@ -27,7 +27,7 @@ export default function StoryTittle({
             return activeTab === key  ? 'opacity-100':'opacity-[0.4]';
         }
         return(
-            <div className='flex justify-start items-center gap-[50px]'>
+            <div className='flex justify-start items-center gap-[50px] text-nowrap'>
                 {
                     Array.isArray(title)&&title?.map((tab:Tab,idx)=>(
                         <span className={cn('cursor-pointer opacity-[0.4] hover:opacity-100 text-white',getConditionalClass(tab.key as string))} onClick={()=>{tab?.onClick?.()}} key={idx}>{tab.label}</span>
@@ -36,9 +36,11 @@ export default function StoryTittle({
             </div>
         )
     }
+
+
     return(
         <div  className={cn('flex justify-between mb-[50px] md:mb-[100px]',textClass)}>
-        <div className={cn('flex justify-start items-center gap-4',textClass)}>
+        <div className={cn('flex justify-start items-center gap-4 overflow-x-auto scrollbar-hidden',textClass)}>
             <PlayIcon width="12"/>
             <p className={cn('font-bold uppercase',textClass,textClassName)}>
                 {

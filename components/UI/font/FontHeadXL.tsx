@@ -6,6 +6,11 @@ interface FontMProps {
     children : React.ReactNode,
     theme?:'dark' | 'light'
 }
+
+const style={
+    fontSize:"clamp(1.8rem,calc(12vw + 1rem),10rem)"
+}
+
 export default function FontHeadXL({ className,children,theme = 'light'}: FontMProps) {
 
     const fontTheme ={
@@ -13,6 +18,6 @@ export default function FontHeadXL({ className,children,theme = 'light'}: FontMP
         'light' :'text-black'
     }
     return (
-        <span className={cn("text-[8rem] md:text-[10rem] font-[400]", className,fontTheme[theme])}>{children}</span>
+        <span className={cn(" font-[400]", className,fontTheme[theme])} style={style}>{children}</span>
     );
 }

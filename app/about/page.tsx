@@ -44,17 +44,24 @@ export default function ContactPage(){
     useEffect(()=>{
 
         const scrollContainer = horizontalScrollContainerRef.current;
+
+     
+
         if(scrollContainer){
+          const viewportWidth = window.innerWidth; // Get dynamic viewport width
+          const  scrollWidth = scrollContainer.scrollWidth; 
+          const offset = viewportWidth ;
+
             ScrollTrigger.create({
-                
+                // markers:true,
                 trigger:scrollContainer,
                 start:"top top",
-                end:"+=8000vh",
+                 end: `+=${scrollWidth}px`,
                 scrub:1,
                 pin:true,
                 onUpdate:(self)=>{
                     gsap.to(scrollContainer,{
-                        x:`${-420 * self.progress}vw`,
+                      x: `${((-scrollWidth - offset ) * self.progress)}px`,
                         duration:0.5,
                         ease:"none"
                         // ease:"power3.inOut" 

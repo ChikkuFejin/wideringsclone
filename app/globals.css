@@ -91,6 +91,15 @@ html.lenis body {
   font-weight: 300;
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .fm-gtw{
   font-family: 'GT-Walsheim', serif;
   font-style: normal !important;
@@ -115,6 +124,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   position: relative;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -372,5 +382,9 @@ p {
 
 
 
+svg {
+  display: block;
+  overflow: hidden;
+}
 
 /*end anger-link*/

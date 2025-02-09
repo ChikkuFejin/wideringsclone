@@ -8,11 +8,12 @@ import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {cn} from "@/Utils/lib";
 import AngerLink from "@/components/UI/AngerLink";
+import Image from "next/image";
 
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Fotter({
-    className='bg-[#c76c61]'
+    className=''
                                }:{
     className?:string
 }) {
@@ -49,10 +50,10 @@ export default function Fotter({
         <div className='conclusion'>
 
         </div>
-        <div className='h-[130vh] w-[100vw] overflow-hidden'>
+        <div className='min-h-[100dvh]  lg:h-[135vh] w-[100vw] overflow-hidden relative z-20 bg-black'>
 
 
-        <section className={cn("footer w-full z-[-100] pt-[20px]  h-[130vh]  left-0 bottom-0 transition-all duration-3 ease-out",className)}  ref={footerRef}>
+        <section className={cn("footer w-full z-[-100] pt-[20px]  h-[130vh]  left-0 bottom-0 transition-all duration-3 ease-out bg-black",className)}  ref={footerRef}>
             <div className="container  pb-[100px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">
@@ -69,7 +70,7 @@ export default function Fotter({
             <div className="my-[100px]">
                 <AngerLink href={'/contact'} className={'btn '}
 
-                           style={{'backgroundColor':'white','color':'red'}}
+                           style={{'backgroundColor':'white','color':'black'}}
                 >Contact Us
                 </AngerLink>
             </div>
@@ -78,28 +79,36 @@ export default function Fotter({
             <div className="text-white mb-4">
                 <div className="grid grid-cols-2">
                     <div className="grid grid-cols-3 gap-3">
-                    <ul>
+                    {/* <ul>
                     <li className="mb-2" ><Link href="#" >Instagram</Link></li>
                     <li className="mb-2" >  <Link href="#"  >Linkedin</Link></li>
                     <li className="mb-2" >  <Link href="#"  >Facebook</Link></li>
-                </ul>
+                </ul> */}
 
                 <ul>
-                    <li className="mb-2" ><Link href="#" >Portfolio</Link></li>
-                    <li className="mb-2" >  <Link href="#"  >Services</Link></li>
-                    <li className="mb-2" >  <Link href="#"  >About</Link></li>
+                    <li className="mb-2" ><AngerLink href="/portfolio" >Portfolio</AngerLink></li>
+                    <li className="mb-2" >  <AngerLink href="/services"  >Services</AngerLink></li>
+                    <li className="mb-2" >  <AngerLink href="/about"  >About</AngerLink></li>
                 </ul>
 
                 <ul>
                     <li className="mb-2" ><Link href="#" ></Link></li>
-                    <li className="mb-2" >  <Link href="#"  >CRM platform</Link></li>
-                    <li className="mb-2" >  <Link href="#"  >EC projects</Link></li>
+                    <li className="mb-2" >  <AngerLink href="#"  >CRM platform</AngerLink></li>
+                    <li className="mb-2" >  <AngerLink href="#"  >EC projects</AngerLink></li>
                 </ul>
                     </div>
 
 
                 </div>
                 
+            </div>
+            <div>
+            <div className=" text-white  flex justify-between items-center ">
+                <p className="text-sm text-white flex flex-nowrap gap-2">&copy; 2025   <Image width={60} height={50}     src="/assets/images/logo_light.png" alt="Scilens Logo" />
+                . All rights reserved.</p>
+                {/* <Image width={55} height={50}     src="/assets/images/logo_light.png" alt="Scilens Logo" /> */}
+
+            </div>
             </div>
             
             </div>

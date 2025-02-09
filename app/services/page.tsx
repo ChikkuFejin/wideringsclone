@@ -60,7 +60,7 @@ export default function ServicePage(){
                 <div className="flex-col flex justify-center items-center container">
 
 
-                <p className="text-[5rem] md:text-[10rem] text-center text-white">We prove how</p>
+                <p className="text-[5rem] md:text-[10rem] text-center text-white z-20 lg:z-auto">We prove how</p>
                 <p className="text-[5rem] md:text-[10rem] text-white fm-reckless-n relative z-20">you are</p>
                 <p className="text-[5rem] md:text-[10rem] mt-[-30px] md:mt-[-70px] text-white fm-reckless-n relative z-20">outstanding</p>
 
@@ -111,7 +111,7 @@ export default function ServicePage(){
             <section>
                 <HorizontalScroll/>
             </section>
-            <section className='bg-black pt-[200px] '>
+            <section className='bg-black pt-[200px] mb-[100px] '>
                 <StoriesSectionTwo theme='dark' classConatiner="mt-0 pb-0"/>
             </section>
 

@@ -19,15 +19,22 @@ export default function SectionTab({
         key:'all',
         onClick:()=>{ handleClickTab('all')}
     },
-        {
-            label: 'Creative ad video',
-            key:'creativeandVideo',
-            onClick:()=>{ handleClickTab('creativeandVideo')}
-        },
+
         {
             label: 'Branding',
             key:'branding',
             onClick:()=>{ handleClickTab('branding')}
+        },
+       
+        {
+            label: 'Social Media',
+            key:'socialMedia',
+            onClick:()=>{ handleClickTab('socialMedia')}
+        },
+        {
+            label: 'Search Engine Optimization',
+            key:'searchEngineOptimization',
+            onClick:()=>{ handleClickTab('searchEngineOptimization')}
         },
         {
             label: 'Website Development',
@@ -35,14 +42,9 @@ export default function SectionTab({
             onClick:()=>{ handleClickTab('websiteDevelopment')}
         },
         {
-            label: 'Social Media Marketing',
-            key:'socialMediaMarketing',
-            onClick:()=>{ handleClickTab('socialMediaMarketing')}
-        },
-        {
-            label: 'Social Media Management',
-            key:'socialMediaManagement',
-            onClick:()=>{ handleClickTab('socialMediaManagement')}
+            label: 'Media Production',
+            key:'mediaProduction',
+            onClick:()=>{ handleClickTab('mediaProduction')}
         },
 
 

@@ -17,28 +17,31 @@ export default function StoriesSectionTwo({
         //   count: '06'
         // },
         {
+            videPath:'/assets/4Branding.mp4',
+            title:'Branding',
+              count: '07'
+          },
+          {
+            videPath:'/assets/6Socialmediamarketing.mp4',
+            title:'Social media',
+              count: '05'
+          },
+
+        {
           videPath:'/assets/3Creativeadvideo.mp4',
-          title:'Creative ad video',
+          title:'Search Engine Optimization',
             count: '05'
         },
-        {
-          videPath:'/assets/4Branding.mp4',
-          title:'Branding',
-            count: '07'
-        },
+        
         {
           videPath:'/assets/5WebsiteDevelopment.mp4',
           title:'Website Development',
             count: '04'
         },
-        {
-          videPath:'/assets/6Socialmediamarketing.mp4',
-          title:'Social media marketing',
-            count: '05'
-        },
+        
         {
           videPath:'/assets/7Socialmediamanagement.mp4',
-          title:'Social media management',
+          title:'Media Production',
             count: '06'
         }
       ];
@@ -71,7 +74,7 @@ export default function StoriesSectionTwo({
 
     return(
         <>
-        <section className={cn("container static mt-[60px] pb-[200px]  ",classThemeConatiner[theme],classConatiner)}  onMouseMove={handleMouseMove}>
+        <section className={cn("container static overflow-x-hidden mt-[60px] pb-[200px]  ",classThemeConatiner[theme],classConatiner)}  onMouseMove={handleMouseMove}>
             <StoryTittle title='Our Expertise' mode={titleContainer}/>
             {
                 slides.map((slide, index:number) => (

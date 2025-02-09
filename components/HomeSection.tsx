@@ -7,7 +7,9 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import AnimeUpToTop from "@/components/UI/animie/AnimeUpToTop";
 
 gsap.registerPlugin(ScrollTrigger);
-export default function HomeSection() {
+export default function HomeSection({
+                                        isLoading=false
+                                    }:{isLoading?:boolean}) {
 
     useEffect(() => {
         const heroContainer   = document.querySelector('.hero-container');
@@ -48,14 +50,14 @@ export default function HomeSection() {
     <div className="mt-[120px] relative z-10 hero-container">
        
       <div className="text-[4.5rem] md:text-[8rem] z-[101] relative  leading-[120%] font-auto container">
-          <AnimeUpToTop>We Reflect</AnimeUpToTop>
-          <AnimeUpToTop addDuration={100}>
+          <AnimeUpToTop start={!isLoading}>We Reflect</AnimeUpToTop>
+          <AnimeUpToTop start={!isLoading} addDuration={100}>
               <strong className="fm-reckless">Your</strong>
           </AnimeUpToTop>
 
         <div className="text-right">
-            <AnimeUpToTop addDuration={200}>Remarkable</AnimeUpToTop>
-            <AnimeUpToTop addDuration={300}>
+            <AnimeUpToTop start={!isLoading} addDuration={200}>Remarkable</AnimeUpToTop>
+            <AnimeUpToTop start={!isLoading} addDuration={300}>
                 <strong className="fm-reckless block"> Potential</strong>
             </AnimeUpToTop>
 
@@ -68,7 +70,7 @@ export default function HomeSection() {
         className={cn(' z-[100]  mx-auto scale-[90%] hero-video',)}
 
       >
-            <AnimeUpToTop addDuration={400}>
+            <AnimeUpToTop start={!isLoading} addDuration={400}>
 
         <video
          

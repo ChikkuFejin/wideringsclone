@@ -1,6 +1,6 @@
 
 import {cn} from "@/Utils/lib";
-import { UpToTopAnimeChild, UpToTopAnimeContainer } from "./UI/UpToTopAnime";
+import { UpToTopAnimeChild } from "./UI/UpToTopAnime";
 import AngerLink from "@/components/UI/AngerLink";
 
 export interface closeLoaderClass{
@@ -13,11 +13,10 @@ export interface MobNavProps {
 }
 
 export default function MobNav({
-                                   closeLoaderClass,
                                    isOpen = false
                                }:MobNavProps){
 
-console.log(closeLoaderClass)
+
 const overlayOpen= isOpen?"transform scale-y-1 transition-transform duration-700 ease-[cubic-bezier(.19,1,.22,1)] delay-50":"";
 const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :"";
 // const linkClass = "transform translate-y-full transition-transform duration-1000" ;
@@ -40,49 +39,52 @@ const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :""
                 <div className="mb-[72px]">
                     <ul>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
-                            <UpToTopAnimeChild isActive={isOpen}  className="block">
-                                    <AngerLink href="/portfolio" >Portfolio</AngerLink>
-                            </UpToTopAnimeChild>
-                            
-                        </li>
-                        <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
-                        <UpToTopAnimeChild isActive={isOpen} addDuration={200}>
-                            <AngerLink href="/services" >Services</AngerLink>
+                            <UpToTopAnimeChild isActive={isOpen} >
+                                <AngerLink href="/" >Home</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
-                        <UpToTopAnimeChild isActive={isOpen} addDuration={400}>
-                            <AngerLink href="/about" >About</AngerLink>
+                            <UpToTopAnimeChild isActive={isOpen} addDuration={200}>
+                                <AngerLink href="/about" >About Us</AngerLink>
+                            </UpToTopAnimeChild>
+                        </li>
+
+
+
+                        <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
+                            <UpToTopAnimeChild isActive={isOpen} addDuration={400}>
+                                <AngerLink href="/services" >Services</AngerLink>
                             </UpToTopAnimeChild>
                         </li>
                         <li className={cn("h1 mb-[16px] font-[400] overflow-hidden")}>
-                        <UpToTopAnimeChild isActive={isOpen} addDuration={600}>
-                            <AngerLink href="/contact" >Contact</AngerLink>
+                            <UpToTopAnimeChild isActive={isOpen}  addDuration={600} className="block">
+                                <AngerLink href="/portfolio" >Portfolio</AngerLink>
                             </UpToTopAnimeChild>
+
                         </li>
                     </ul>
                 </div>
-                <UpToTopAnimeContainer className="mb-[40px]">
-                <UpToTopAnimeChild isActive={isOpen} addDuration={610} className="grid grid-cols-2">
+                {/*<UpToTopAnimeContainer className="mb-[40px]">*/}
+                {/*<UpToTopAnimeChild isActive={isOpen} addDuration={610} className="grid grid-cols-2">*/}
 
-                        <div>LT</div>
-                        <div>
-                            <ul>
-                                <li className="mb-[12px]">Instagram</li>
-                                <li className="mb-[12px]">Linkedin</li>
-                                <li className="mb-[12px]">Facebook</li>
-                            </ul>
-                        </div>
+                {/*        <div>LT</div>*/}
+                {/*        <div>*/}
+                {/*            <ul>*/}
+                {/*                <li className="mb-[12px]">Instagram</li>*/}
+                {/*                <li className="mb-[12px]">Linkedin</li>*/}
+                {/*                <li className="mb-[12px]">Facebook</li>*/}
+                {/*            </ul>*/}
+                {/*        </div>*/}
                 
-                </UpToTopAnimeChild>
-                </UpToTopAnimeContainer>
+                {/*</UpToTopAnimeChild>*/}
+                {/*</UpToTopAnimeContainer>*/}
                 <div className="mb-[20px] overflow-hidden">
 
                 <UpToTopAnimeChild isActive={isOpen} addDuration={620} className="grid grid-cols-2">
                
                
-                    <p className="text-white opacity-[.5]">+91 876 786 676 73</p>
-                    <p className="text-white opacity-[.5]"> hello@gmail.com</p>
+                    <p className="text-white opacity-[.5]">+971 58 819 9586</p>
+                    <p className="text-white opacity-[.5]"> hello@Scilens.com</p>
        
                 </UpToTopAnimeChild>
                 </div>

@@ -22,24 +22,25 @@ export default function Home() {
     setIsLoading(status);
   }
   return (
-    <div className='grain'>
+    <>
+ 
+    <div className='grain w-[100dvw]'>
      
      <Preloader onChange={handleLoderUpdate}/>
                <Header/>
-      {
-        !isLoading&&(
-          <HomeSection/>
-        )
-      }
+
+            <HomeSection
+                isLoading={isLoading}
+            />
           <StoriesSession/>
           <StoriesSectionTwo/>
           <AboutUsTwo/>
           <OurClients/>
 
           
-          <Fotter className='bg-[#ab1301] '/>
+          <Fotter/>
 
       </div>
-      
+      </>
 );
 }

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './horizontalScroll.css';
 import Image from "next/image";
 import FontHeadXL from "@/components/UI/font/FontHeadXL";
-import FontHeadM from "@/components/UI/font/FontHeadM";
+import HsServiceSectionTwo from "./HsServiceSectionTwo";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,9 +80,10 @@ const HorizontalScroll = () => {
         const viewportWidth = window.innerWidth;
 
         ScrollTrigger.create({
+            // markers:true,
             trigger: sectionTwo.current, // Second section
-            start: `+=${(triggerWidth / 2) + 200}px`, // Adjust as needed
-            end: `+=${viewportWidth * 2}px`, // Adjust as needed
+            start: `+=${(triggerWidth / 3) + 10}px`, // Adjust as needed
+            end: `+=${viewportWidth * 3}px`, // Adjust as needed
             onUpdate:(self)=>{
                 console.log("offsetWidth",self.progress * 100);
                 gsap.set('.sticky-header',{
@@ -127,118 +128,178 @@ const HorizontalScroll = () => {
                     </div>
 
 
-                    <div className=" absolute left-[67%] z-20 text-white" ref={movingDevRef}>
+                    <div className=" absolute left-[37%] md:left-[67%] z-20 text-white" ref={movingDevRef}>
                         <p className="text-white flex flex-col flex-wrap h-[100vh] justify-center items-start   ">
                             <FontHeadXL theme='dark'>Our</FontHeadXL>
-                            <FontHeadXL theme='dark' className="fm-reckless-n mt-[-7rem] pl-[10rem] "> process</FontHeadXL>
+                            <FontHeadXL theme='dark' className="fm-reckless-n mt-[-7rem] pl-[10rem] "> Services</FontHeadXL>
                         </p>
                     </div>
                 </div>
-                <div className="section section-2 bg-black " ref={sectionTwo}>
-                    <Image width='584' height={329}
-                           src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg"
-                           alt=""
-                           className="absolute left-[20%] w-[20%] bottom-[5%] z-[-1] moving-dev-img"
-
-                    />
-                    <Image width='584' height={329}
-                           src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
-                           alt=""
-                           className="absolute right-[20%] w-[20%] top-[8%] z-[-1] moving-dev-img"
-
-                    />
-                    <div>
-                        <FontHeadM className="fm-reckless-n px-[10%] text-white ">The Truth</FontHeadM>
-                        <ul className="flex mt-[50px]">
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white ">O1 NEED</p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                    Finding out what our clients want or need to prove. What makes them
-                                    outstanding?
-                                </span>
-                            </li>
-
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white">02 DISCOVERY </p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                                    Shadowing, interviewing, secret shopper, trying products – what do we do
-                                                    to find
-                                                    the real truth that makes those businesses outstand.
-                                                </span>
-                            </li>
-
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white">03 EFFECT</p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                                        <ul>
-                                                            <li>Creative brief:</li>
-                                                            <li>1.Understand</li>
-                                                            <li>2.Remember</li>
-                                                            <li>3.Feel</li>
-                                                            <li>4.Believe</li>
-                                                        </ul>
-                                            </span>
-                            </li>
-
-
+                <HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Branding"
+                    contents={[
+                        {
+                            title:'O1 Logo  Design',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'02 Brand Identity ',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'03 Brand Guideline',
+                            content:<ul>
+                            <li>Creative brief:</li>
+                            <li>1.Understand</li>
+                            <li>2.Remember</li>
+                            <li>3.Feel</li>
+                            <li>4.Believe</li>
                         </ul>
+                        }
 
+                    ]}
+                />
 
-                    </div>
+<HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Social Media"
+                    contents={[
+                        {
+                            title:'O1 Marketing',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'02 Management',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'03 Content creation',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        }
 
-                </div>
-                <div className="section  bg-black " ref={sectionTwo}>
-                    <Image width='584' height={329}
-                           src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg"
-                           alt=""
-                           className="absolute left-[20%] w-[20%] bottom-[5%] z-[-1] moving-dev-img"
+                    ]}
+                />
 
-                    />
-                    <Image width='584' height={329}
-                           src="https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
-                           alt=""
-                           className="absolute right-[20%] w-[20%] top-[8%] z-[-1] moving-dev-img"
+<HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Social Media"
+                    contents={[
+                        {
+                            title:'O4 Google Ads',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'05 Meta Ads',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'06 YouTube ads',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        }
 
-                    />
-                    <div>
-                        <FontHeadM className="fm-reckless-n px-[10%] text-white ">The story</FontHeadM>
-                        <ul className="flex mt-[50px]">
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white uppercase">O1 Scenario</p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                    Our story telling technique – how do we transform client insights into stories that reach and engage audience. Methodology, that sets us apart from others.
-                                </span>
-                            </li>
+                    ]}
 
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white uppercase">02 Implementation </p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                                    Attention. Live presentations.
-Criteria. Showcase guided by criteria.
-Process. Emphasis on finding out the truth, translating it into story.
-Experience – light, sound, comfort.
-                                                </span>
-                            </li>
+                    isHideHeading
+                />
 
-                            <li className="w-[600px] pr-[10%]">
-                                <p className="py-[50px] block text-white uppercase">03 Discovery</p>
-                                <span className="fm-reckless-n text-[1.2rem]">
-                                                        <ul>
-                                                            <li>To maximise value of a single video</li>
-                                                    <li>-Channels-Different cuts</li>
-                                                    <li>-Adaptations</li>
-                                                    <li>2.Untold Stories</li>
-                                                        </ul>
-                                            </span>
-                            </li>
+<HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Search Engine Optimization"
+                    contents={[
+                        {
+                            title:'O1 Google Ads',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'02 Meta Ads',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'03 YouTube ads',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        }
 
+                    ]}
 
-                        </ul>
+                />
 
+<HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Web Development"
+                    contents={[
+                        {
+                            title:'O1 Business/Corporate Websites',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'02 E-commerce Websites',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'03 Portfolio Websites',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:' 04 Blog Websites',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        }
+                       
 
-                    </div>
+                    ]}
 
-                </div>
+                />
+
+<HsServiceSectionTwo
+                    innerRef={sectionTwo}
+                    bgImages={[
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.40-1-1.jpg",
+                        "https://widewings.eu/wp-content/uploads/2022/12/Screen-Shot-2022-10-12-at-18.39-1-1.jpg"
+                    ]}
+                    heading="Media Production"
+                    contents={[
+                        {
+                            title:'O1 Product Photography & Shoots',
+                            content:"Finding out what our clients want or need to prove. What makes them outstanding?"
+                        },
+                        {
+                            title:'02 Promotional videos for brands ',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'03 Podcasts',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        },
+                        {
+                            title:'04 YouTube Video Production',
+                            content:"Shadowing, interviewing, secret shopper, trying products – what do we do to find the real truth that makes those businesses outstand."
+                        }
+                       
+
+                    ]}
+
+                />
+
 
                 <div className="section end-section ">
 

@@ -4,7 +4,7 @@
 }
 
 .loader-text .key {
-    font-size: 7vw;
+    font-size: clamp(1.8rem,calc(7vw + 1rem),5rem);
     display: inline-block;
     letter-spacing: -0.3vw;
     transition: transform 0.2s;
