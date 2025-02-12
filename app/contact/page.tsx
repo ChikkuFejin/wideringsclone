@@ -49,7 +49,7 @@ export default function ContactPage(){
                       
                         <Image src="https://widewings.eu/wp-content/uploads/2022/11/Screen-Shot-2022-10-12-at-18.33-1.jpg" width="439" height={516}  alt="image" className="hidden md:inline"/>
                         <div className="mt-[200px] mb-[100px]">
-                            <p className="font-bold">hello@Scilens.com</p>
+                            <p className="font-bold">scilensmedia@gmail.com</p>
                             <p className="font-bold">+971 58 819 9586</p>
                         </div>
 

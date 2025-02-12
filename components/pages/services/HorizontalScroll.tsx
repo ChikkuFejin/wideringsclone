@@ -35,7 +35,7 @@ const HorizontalScroll = () => {
             scrollTrigger: {
                 trigger: container,
                 start: "top top",
-                end: () => `+=50000`,
+                end: () => `+=30000`,
                 scrub: true,
                 pin: true,
                 anticipatePin: 1,
@@ -87,8 +87,8 @@ const HorizontalScroll = () => {
         ScrollTrigger.create({
             // markers:true,
             trigger: sectionTwo.current, // Second section
-            start: `+=${(triggerWidth / 2) + 5000}px`, // Adjust as needed
-            end: `+=${40000 - (viewportWidth * 3)}px`, // Adjust as needed
+            start: `+=${(triggerWidth / 2) + 2000}px`, // Adjust as needed
+            end: `+=${26000 - (viewportWidth * 3)}px`, // Adjust as needed
             onUpdate:(self)=>{
                 console.log("offsetWidth",self.progress * 100);
                 gsap.set('.sticky-header',{
