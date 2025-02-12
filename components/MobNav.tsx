@@ -84,7 +84,7 @@ const mobNavOpen = isOpen ? "opacity-100 visibility-visible overflow-hidden" :""
                
                
                     <p className="text-white opacity-[.5]">+971 58 819 9586</p>
-                    <p className="text-white opacity-[.5]"> hello@Scilens.com</p>
+                    <p className="text-white opacity-[.5]"> scilensmedia@gmail.com</p>
        
                 </UpToTopAnimeChild>
                 </div>

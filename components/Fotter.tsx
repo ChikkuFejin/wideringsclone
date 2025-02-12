@@ -50,11 +50,11 @@ export default function Fotter({
         <div className='conclusion'>
 
         </div>
-        <div className='min-h-[100dvh]  lg:h-[135vh] w-[100vw] overflow-hidden relative z-20 bg-black'>
+        <div className='min-h-[100dvh] w-[100vw] overflow-hidden relative z-20 bg-black'>
 
 
-        <section className={cn("footer w-full z-[-100] pt-[20px]  min-h-[100dvh]  left-0 bottom-0 transition-all duration-3 ease-out bg-black",className)}  ref={footerRef}>
-            <div className="container  pb-[100px]" >
+        <section className={cn("footer w-full z-[-100] pt-[20px]   left-0 bottom-0 transition-all duration-3 ease-out bg-black",className)}  ref={footerRef}>
+            <div className="container  pb-[50px]" >
             <SessionBorderLine mode="light"/>
             <div className="mt-[60px]">
             <StoryTittle title='Lets Talk' mode="light"/>
